@@ -18,7 +18,12 @@ class HomeController extends Controller
     /**
      * Affiche le tableau de bord principal
      */
-    // DashboardController.php
+    
+         public function welcome(){
+
+        return view('welcome');
+    }
+
 public function index()
 {
     $user = Auth::user();

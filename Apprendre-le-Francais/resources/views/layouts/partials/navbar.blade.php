@@ -6,11 +6,11 @@
           <i class="fas fa-bars"></i>
         </button>
       @endauth
-      <a class="navbar-brand" href="{{ route('home') }}">
+      <a class="navbar-brand" href="{{ route('welcome') }}">
         <i class="fas fa-book-open"></i>
         <span>FrançaisFacile</span>
       </a>
-      
+          
       <div class="d-flex align-items-center">
         @auth
           <!-- Streak Indicator -->

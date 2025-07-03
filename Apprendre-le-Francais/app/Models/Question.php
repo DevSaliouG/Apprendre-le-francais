@@ -19,6 +19,7 @@ class Question extends Model
         'choix',
         'reponse_correcte',
         'skill',
+        'format_reponse',
         'fichier_audio',
     ];
 

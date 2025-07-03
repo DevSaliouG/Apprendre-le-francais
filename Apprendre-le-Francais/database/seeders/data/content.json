@@ -1,350 +1,2116 @@
 {
   "levels": [
-    {"code": "A1", "name": "Débutant"},
-    {"code": "A2", "name": "Élémentaire"},
-    {"code": "B1", "name": "Intermédiaire"},
-    {"code": "B2", "name": "Avancé"},
-    {"code": "C1", "name": "Autonome"},
-    {"code": "C2", "name": "Maîtrise"}
+    {"code": "D", "name": "Débutant"},
+    {"code": "I", "name": "Intermédiaire"},
+    {"code": "A", "name": "Avancé"}
   ],
   "lessons": [
     {
       "id": 1,
       "level_id": 1,
-      "title": "Salutations simples",
-      "content": "Apprendre à dire bonjour et au revoir"
+      "title": "Les articles définis",
+      "content": "Apprendre à utiliser le, la, les",
+      "type": "grammaire"
     },
     {
       "id": 2,
       "level_id": 1,
-      "title": "Nombres 1-10",
-      "content": "Compter jusqu'à 10"
+      "title": "Accord des adjectifs",
+      "content": "Accorder les adjectifs avec le nom",
+      "type": "orthographe"
     },
     {
       "id": 3,
-      "level_id": 2,
-      "title": "Famille proche",
-      "content": "Nommer maman, papa, frère, sœur"
+      "level_id": 1,
+      "title": "Salutations de base",
+      "content": "Bonjour, merci, au revoir",
+      "type": "vocabulaire"
     },
     {
       "id": 4,
-      "level_id": 2,
-      "title": "Jours de la semaine",
-      "content": "Connaître les 7 jours"
+      "level_id": 1,
+      "title": "Présent des verbes -er",
+      "content": "Conjugaison des verbes du premier groupe",
+      "type": "conjugaison"
     },
     {
       "id": 5,
-      "level_id": 3,
-      "title": "Magasins",
-      "content": "Boulangerie, supermarché, pharmacie"
+      "level_id": 1,
+      "title": "Les pronoms sujets",
+      "content": "Je, tu, il/elle, nous, vous, ils/elles",
+      "type": "grammaire"
     },
     {
       "id": 6,
-      "level_id": 3,
-      "title": "Météo simple",
-      "content": "Il fait beau, il pleut"
+      "level_id": 1,
+      "title": "Accord du participe passé",
+      "content": "Règles de base des accords",
+      "type": "orthographe"
     },
     {
       "id": 7,
-      "level_id": 4,
-      "title": "Raconter hier",
-      "content": "Verbes au passé composé"
+      "level_id": 1,
+      "title": "Nombres 1-100",
+      "content": "Apprendre à compter",
+      "type": "vocabulaire"
     },
     {
       "id": 8,
-      "level_id": 4,
-      "title": "Donner son avis",
-      "content": "J'aime, je n'aime pas"
+      "level_id": 1,
+      "title": "Verbes être et avoir",
+      "content": "Conjugaison au présent",
+      "type": "conjugaison"
     },
+
     {
       "id": 9,
-      "level_id": 5,
-      "title": "Comprendre les médias",
-      "content": "Actualités simples"
+      "level_id": 2,
+      "title": "Subjonctif présent",
+      "content": "Formation et utilisation",
+      "type": "grammaire"
     },
     {
       "id": 10,
-      "level_id": 5,
-      "title": "Exprimer des nuances",
-      "content": "Certainement, peut-être"
+      "level_id": 2,
+      "title": "Accords complexes",
+      "content": "Cas particuliers d'accords",
+      "type": "orthographe"
     },
     {
       "id": 11,
-      "level_id": 6,
-      "title": "Culture française",
-      "content": "Expressions courantes"
+      "level_id": 2,
+      "title": "Expressions idiomatiques",
+      "content": "Expressions courantes",
+      "type": "vocabulaire"
     },
     {
       "id": 12,
-      "level_id": 6,
-      "title": "Débats simples",
-      "content": "Thèmes de société"
+      "level_id": 2,
+      "title": "Passé composé",
+      "content": "Conjugaison et accords",
+      "type": "conjugaison"
+    },
+    {
+      "id": 13,
+      "level_id": 2,
+      "title": "Pronoms relatifs",
+      "content": "Qui, que, où, dont",
+      "type": "grammaire"
+    },
+    {
+      "id": 14,
+      "level_id": 2,
+      "title": "Homophones courants",
+      "content": "Différencier ses/ces, a/à, etc.",
+      "type": "orthographe"
+    },
+    {
+      "id": 15,
+      "level_id": 2,
+      "title": "Vocabulaire professionnel",
+      "content": "Termes liés au monde du travail",
+      "type": "vocabulaire"
+    },
+    {
+      "id": 16,
+      "level_id": 2,
+      "title": "Imparfait",
+      "content": "Conjugaison et emploi",
+      "type": "conjugaison"
+    },
+
+   
+    {
+      "id": 17,
+      "level_id": 3,
+      "title": "Discours indirect",
+      "content": "Transformation des temps et pronoms",
+      "type": "grammaire"
+    },
+    {
+      "id": 18,
+      "level_id": 3,
+      "title": "Orthographe des mots complexes",
+      "content": "Mots d'origine étrangère",
+      "type": "orthographe"
+    },
+    {
+      "id": 19,
+      "level_id": 3,
+      "title": "Vocabulaire littéraire",
+      "content": "Termes spécifiques à la littérature",
+      "type": "vocabulaire"
+    },
+    {
+      "id": 20,
+      "level_id": 3,
+      "title": "Subjonctif passé",
+      "content": "Formation et utilisation",
+      "type": "conjugaison"
+    },
+    {
+      "id": 21,
+      "level_id": 3,
+      "title": "Concordance des temps",
+      "content": "Harmonisation des temps verbaux",
+      "type": "grammaire"
+    },
+    {
+      "id": 22,
+      "level_id": 3,
+      "title": "Pluriels particuliers",
+      "content": "Pluriels des mots composés",
+      "type": "orthographe"
+    },
+    {
+      "id": 23,
+      "level_id": 3,
+      "title": "Nuances sémantiques",
+      "content": "Différences entre synonymes",
+      "type": "vocabulaire"
+    },
+    {
+      "id": 24,
+      "level_id": 3,
+      "title": "Conditionnel passé",
+      "content": "Formation et emplois",
+      "type": "conjugaison"
     }
   ],
   "exercises": [
-    {"id": 1, "lesson_id": 1, "type": "oral", "difficulty": 1},
+   
+    {"id": 1, "lesson_id": 1, "type": "écrit", "difficulty": 1},
     {"id": 2, "lesson_id": 1, "type": "écrit", "difficulty": 1},
-    {"id": 3, "lesson_id": 1, "type": "mixte", "difficulty": 1},
-    {"id": 4, "lesson_id": 2, "type": "oral", "difficulty": 1},
-    {"id": 5, "lesson_id": 2, "type": "écrit", "difficulty": 1},
-    {"id": 6, "lesson_id": 2, "type": "mixte", "difficulty": 1},
+    {"id": 3, "lesson_id": 2, "type": "écrit", "difficulty": 1},
+    {"id": 4, "lesson_id": 2, "type": "écrit", "difficulty": 1},
+    {"id": 5, "lesson_id": 3, "type": "écrit", "difficulty": 1},
+    {"id": 6, "lesson_id": 3, "type": "écrit", "difficulty": 1},
+    {"id": 7, "lesson_id": 4, "type": "écrit", "difficulty": 1},
+    {"id": 8, "lesson_id": 4, "type": "écrit", "difficulty": 1},
+    {"id": 9, "lesson_id": 5, "type": "écrit", "difficulty": 1},
+    {"id": 10, "lesson_id": 5, "type": "écrit", "difficulty": 1},
+    {"id": 11, "lesson_id": 6, "type": "écrit", "difficulty": 1},
+    {"id": 12, "lesson_id": 6, "type": "écrit", "difficulty": 1},
+    {"id": 13, "lesson_id": 7, "type": "écrit", "difficulty": 1},
+    {"id": 14, "lesson_id": 7, "type": "écrit", "difficulty": 1},
+    {"id": 15, "lesson_id": 8, "type": "écrit", "difficulty": 1},
+    {"id": 16, "lesson_id": 8, "type": "écrit", "difficulty": 1},
+
     
-    {"id": 7, "lesson_id": 3, "type": "oral", "difficulty": 2},
-    {"id": 8, "lesson_id": 3, "type": "écrit", "difficulty": 2},
-    {"id": 9, "lesson_id": 3, "type": "mixte", "difficulty": 2},
-    {"id": 10, "lesson_id": 4, "type": "oral", "difficulty": 2},
-    {"id": 11, "lesson_id": 4, "type": "écrit", "difficulty": 2},
-    {"id": 12, "lesson_id": 4, "type": "mixte", "difficulty": 2},
-    
-    {"id": 13, "lesson_id": 5, "type": "oral", "difficulty": 3},
-    {"id": 14, "lesson_id": 5, "type": "écrit", "difficulty": 3},
-    {"id": 15, "lesson_id": 5, "type": "mixte", "difficulty": 3},
-    {"id": 16, "lesson_id": 6, "type": "oral", "difficulty": 3},
-    {"id": 17, "lesson_id": 6, "type": "écrit", "difficulty": 3},
-    {"id": 18, "lesson_id": 6, "type": "mixte", "difficulty": 3},
-    
-    {"id": 19, "lesson_id": 7, "type": "oral", "difficulty": 4},
-    {"id": 20, "lesson_id": 7, "type": "écrit", "difficulty": 4},
-    {"id": 21, "lesson_id": 7, "type": "mixte", "difficulty": 4},
-    {"id": 22, "lesson_id": 8, "type": "oral", "difficulty": 4},
-    {"id": 23, "lesson_id": 8, "type": "écrit", "difficulty": 4},
-    {"id": 24, "lesson_id": 8, "type": "mixte", "difficulty": 4},
-    
-    {"id": 25, "lesson_id": 9, "type": "oral", "difficulty": 5},
-    {"id": 26, "lesson_id": 9, "type": "écrit", "difficulty": 5},
-    {"id": 27, "lesson_id": 9, "type": "mixte", "difficulty": 5},
-    {"id": 28, "lesson_id": 10, "type": "oral", "difficulty": 5},
-    {"id": 29, "lesson_id": 10, "type": "écrit", "difficulty": 5},
-    {"id": 30, "lesson_id": 10, "type": "mixte", "difficulty": 5},
-    
-    {"id": 31, "lesson_id": 11, "type": "oral", "difficulty": 5},
-    {"id": 32, "lesson_id": 11, "type": "écrit", "difficulty": 5},
-    {"id": 33, "lesson_id": 11, "type": "mixte", "difficulty": 5},
-    {"id": 34, "lesson_id": 12, "type": "oral", "difficulty": 5},
-    {"id": 35, "lesson_id": 12, "type": "écrit", "difficulty": 5},
-    {"id": 36, "lesson_id": 12, "type": "mixte", "difficulty": 5}
+    {"id": 17, "lesson_id": 9, "type": "écrit", "difficulty": 2},
+    {"id": 18, "lesson_id": 9, "type": "écrit", "difficulty": 2},
+    {"id": 19, "lesson_id": 10, "type": "écrit", "difficulty": 2},
+    {"id": 20, "lesson_id": 10, "type": "écrit", "difficulty": 2},
+    {"id": 21, "lesson_id": 11, "type": "écrit", "difficulty": 2},
+    {"id": 22, "lesson_id": 11, "type": "écrit", "difficulty": 2},
+    {"id": 23, "lesson_id": 12, "type": "écrit", "difficulty": 2},
+    {"id": 24, "lesson_id": 12, "type": "écrit", "difficulty": 2},
+    {"id": 25, "lesson_id": 13, "type": "écrit", "difficulty": 2},
+    {"id": 26, "lesson_id": 13, "type": "écrit", "difficulty": 2},
+    {"id": 27, "lesson_id": 14, "type": "écrit", "difficulty": 2},
+    {"id": 28, "lesson_id": 14, "type": "écrit", "difficulty": 2},
+    {"id": 29, "lesson_id": 15, "type": "écrit", "difficulty": 2},
+    {"id": 30, "lesson_id": 15, "type": "écrit", "difficulty": 2},
+    {"id": 31, "lesson_id": 16, "type": "écrit", "difficulty": 2},
+    {"id": 32, "lesson_id": 16, "type": "écrit", "difficulty": 2},
+
+    {"id": 33, "lesson_id": 17, "type": "écrit", "difficulty": 3},
+    {"id": 34, "lesson_id": 17, "type": "écrit", "difficulty": 3},
+    {"id": 35, "lesson_id": 18, "type": "écrit", "difficulty": 3},
+    {"id": 36, "lesson_id": 18, "type": "écrit", "difficulty": 3},
+    {"id": 37, "lesson_id": 19, "type": "écrit", "difficulty": 3},
+    {"id": 38, "lesson_id": 19, "type": "écrit", "difficulty": 3},
+    {"id": 39, "lesson_id": 20, "type": "écrit", "difficulty": 3},
+    {"id": 40, "lesson_id": 20, "type": "écrit", "difficulty": 3},
+    {"id": 41, "lesson_id": 21, "type": "écrit", "difficulty": 3},
+    {"id": 42, "lesson_id": 21, "type": "écrit", "difficulty": 3},
+    {"id": 43, "lesson_id": 22, "type": "écrit", "difficulty": 3},
+    {"id": 44, "lesson_id": 22, "type": "écrit", "difficulty": 3},
+    {"id": 45, "lesson_id": 23, "type": "écrit", "difficulty": 3},
+    {"id": 46, "lesson_id": 23, "type": "écrit", "difficulty": 3},
+    {"id": 47, "lesson_id": 24, "type": "écrit", "difficulty": 3},
+    {"id": 48, "lesson_id": 24, "type": "écrit", "difficulty": 3}
   ],
-  "questions": [
-    
-    {"id": 1, "exercise_id": 1, "texte": "Écoutez et répétez", "reponse_correcte": "Bonjour", "format_reponse": "texte_libre"},
-    {"id": 2, "exercise_id": 1, "texte": "Écoutez et choisissez", "choix": ["Bonjour", "Merci", "Au revoir", "S'il vous plaît"], "reponse_correcte": "Au revoir", "format_reponse": "choix_multiple"},
-    {"id": 3, "exercise_id": 1, "texte": "Écoutez et complétez: '___ va?'", "reponse_correcte": "Ça", "format_reponse": "texte_libre"},
-    {"id": 4, "exercise_id": 1, "texte": "Écoutez et associez", "choix": ["Bonjour → Matin", "Bonsoir → Soir", "Salut → Amis", "Merci → Gentil"], "reponse_correcte": "Bonsoir → Soir", "format_reponse": "choix_multiple"},
-    {"id": 5, "exercise_id": 1, "texte": "Écoutez et transcrivez", "reponse_correcte": "Je m'appelle Pierre", "format_reponse": "texte_libre"},
-    
-    {"id": 6, "exercise_id": 2, "texte": "Complétez: 'B___jour'", "reponse_correcte": "on", "format_reponse": "texte_libre"},
-    {"id": 7, "exercise_id": 2, "texte": "Choisissez la salutation du matin", "choix": ["Bonsoir", "Bonne nuit", "Bonjour", "Salut"], "reponse_correcte": "Bonjour", "format_reponse": "choix_multiple"},
-    {"id": 8, "exercise_id": 2, "texte": "Reliez: Bonjour → ...", "choix": ["Soir", "Matin", "Nuit", "Après-midi"], "reponse_correcte": "Matin", "format_reponse": "choix_multiple"},
-    {"id": 9, "exercise_id": 2, "texte": "Écrivez la salutation formelle", "reponse_correcte": "Bonjour", "format_reponse": "texte_libre"},
-    {"id": 10, "exercise_id": 2, "texte": "Trouvez l'intrus", "choix": ["Bonjour", "Bonsoir", "Bonne nuit", "Merci"], "reponse_correcte": "Merci", "format_reponse": "choix_multiple"},
-    
-    {"id": 11, "exercise_id": 3, "texte": "Écoutez et répondez 'Bonjour'", "reponse_correcte": "Bonjour", "format_reponse": "texte_libre"},
-    {"id": 12, "exercise_id": 3, "texte": "Complétez le dialogue: A: Bonjour. B: ___", "reponse_correcte": "Bonjour", "format_reponse": "texte_libre"},
-    {"id": 13, "exercise_id": 3, "texte": "Choisissez la réponse à 'Comment ça va?'", "choix": ["Merci", "Bien", "Au revoir", "S'il vous plaît"], "reponse_correcte": "Bien", "format_reponse": "choix_multiple"},
-    {"id": 14, "exercise_id": 3, "texte": "Écoutez et transcrivez la question", "reponse_correcte": "Comment tu t'appelles?", "format_reponse": "texte_libre"},
-    {"id": 15, "exercise_id": 3, "texte": "Écrivez la réponse à 'Comment ça va?'", "reponse_correcte": "Ça va bien", "format_reponse": "texte_libre"},
-    
-    {"id": 16, "exercise_id": 4, "texte": "Écoutez et répétez le nombre", "reponse_correcte": "un", "format_reponse": "texte_libre"},
-    {"id": 17, "exercise_id": 4, "texte": "Écoutez et choisissez le nombre", "choix": ["1", "2", "3", "4"], "reponse_correcte": "3", "format_reponse": "choix_multiple"},
-    {"id": 18, "exercise_id": 4, "texte": "Comptez après 5", "reponse_correcte": "six", "format_reponse": "texte_libre"},
-    {"id": 19, "exercise_id": 4, "texte": "Écoutez et transcrivez", "reponse_correcte": "deux", "format_reponse": "texte_libre"},
-    {"id": 20, "exercise_id": 4, "texte": "Choisissez le nombre entendu", "choix": ["sept", "huit", "neuf", "dix"], "reponse_correcte": "dix", "format_reponse": "choix_multiple"},
-    
-    {"id": 21, "exercise_id": 5, "texte": "Écrivez le chiffre: 1", "reponse_correcte": "un", "format_reponse": "texte_libre"},
-    {"id": 22, "exercise_id": 5, "texte": "Reliez: 4 → ...", "choix": ["un", "deux", "trois", "quatre"], "reponse_correcte": "quatre", "format_reponse": "choix_multiple"},
-    {"id": 23, "exercise_id": 5, "texte": "Complétez: 5 = c___", "reponse_correcte": "inq", "format_reponse": "texte_libre"},
-    {"id": 24, "exercise_id": 5, "texte": "Choisissez l'ordre correct", "choix": ["1,2,3,4", "1,3,2,4", "4,3,2,1", "2,1,4,3"], "reponse_correcte": "1,2,3,4", "format_reponse": "choix_multiple"},
-    {"id": 25, "exercise_id": 5, "texte": "Écrivez le nombre suivant 9", "reponse_correcte": "dix", "format_reponse": "texte_libre"},
-    
-    {"id": 26, "exercise_id": 6, "texte": "Écoutez et écrivez le nombre", "reponse_correcte": "huit", "format_reponse": "texte_libre"},
-    {"id": 27, "exercise_id": 6, "texte": "Complétez: 3 + 2 = ___", "reponse_correcte": "cinq", "format_reponse": "texte_libre"},
-    {"id": 28, "exercise_id": 6, "texte": "Choisissez le nombre manquant: 1, 2, _, 4", "choix": ["un", "deux", "trois", "quatre"], "reponse_correcte": "trois", "format_reponse": "choix_multiple"},
-    {"id": 29, "exercise_id": 6, "texte": "Écoutez et transcrivez", "reponse_correcte": "j'ai deux frères", "format_reponse": "texte_libre"},
-    {"id": 30, "exercise_id": 6, "texte": "Écrivez en lettres: 7", "reponse_correcte": "sept", "format_reponse": "texte_libre"},
-    
-    
-    {"id": 31, "exercise_id": 7, "texte": "Écoutez et répétez", "reponse_correcte": "maman", "format_reponse": "texte_libre"},
-    {"id": 32, "exercise_id": 7, "texte": "Choisissez le mot entendu", "choix": ["Père", "Mère", "Frère", "Sœur"], "reponse_correcte": "Père", "format_reponse": "choix_multiple"},
-    {"id": 33, "exercise_id": 7, "texte": "Écoutez et complétez: 'Ma ___ s'appelle Sophie'", "reponse_correcte": "sœur", "format_reponse": "texte_libre"},
-    {"id": 34, "exercise_id": 7, "texte": "Associez: Femme de mon père → ...", "choix": ["Mère", "Tante", "Sœur", "Cousine"], "reponse_correcte": "Mère", "format_reponse": "choix_multiple"},
-    {"id": 35, "exercise_id": 7, "texte": "Écoutez et transcrivez", "reponse_correcte": "J'ai un frère", "format_reponse": "texte_libre"},
-    
-    {"id": 36, "exercise_id": 8, "texte": "Complétez: 'Mon ___ s'appelle Paul'", "reponse_correcte": "père", "format_reponse": "texte_libre"},
-    {"id": 37, "exercise_id": 8, "texte": "Choisissez le mot pour 'sister'", "choix": ["Frère", "Mère", "Sœur", "Père"], "reponse_correcte": "Sœur", "format_reponse": "choix_multiple"},
-    {"id": 38, "exercise_id": 8, "texte": "Reliez: Frère de mon père → ...", "choix": ["Oncle", "Cousin", "Neveu", "Grand-père"], "reponse_correcte": "Oncle", "format_reponse": "choix_multiple"},
-    {"id": 39, "exercise_id": 8, "texte": "Écrivez la phrase: 'J'ai une sœur'", "reponse_correcte": "J'ai une sœur", "format_reponse": "texte_libre"},
-    {"id": 40, "exercise_id": 8, "texte": "Trouvez l'intrus", "choix": ["Mère", "Père", "Frère", "École"], "reponse_correcte": "École", "format_reponse": "choix_multiple"},
-    
-    {"id": 41, "exercise_id": 9, "texte": "Écoutez et répondez 'Maman'", "reponse_correcte": "Maman", "format_reponse": "texte_libre"},
-    {"id": 42, "exercise_id": 9, "texte": "Complétez: 'Le fils de mon oncle est mon ___'", "reponse_correcte": "cousin", "format_reponse": "texte_libre"},
-    {"id": 43, "exercise_id": 9, "texte": "Choisissez la traduction de 'grandmother'", "choix": ["Grand-père", "Grand-mère", "Tante", "Cousine"], "reponse_correcte": "Grand-mère", "format_reponse": "choix_multiple"},
-    {"id": 44, "exercise_id": 9, "texte": "Écoutez et transcrivez", "reponse_correcte": "Ma famille est petite", "format_reponse": "texte_libre"},
-    {"id": 45, "exercise_id": 9, "texte": "Écrivez: 'J'ai deux grands-parents'", "reponse_correcte": "J'ai deux grands-parents", "format_reponse": "texte_libre"},
-    
-    {"id": 46, "exercise_id": 10, "texte": "Écoutez et répétez", "reponse_correcte": "lundi", "format_reponse": "texte_libre"},
-    {"id": 47, "exercise_id": 10, "texte": "Choisissez le jour entendu", "choix": ["Lundi", "Mardi", "Mercredi", "Jeudi"], "reponse_correcte": "Mercredi", "format_reponse": "choix_multiple"},
-    {"id": 48, "exercise_id": 10, "texte": "Écoutez et complétez: 'Aujourd'hui c'est lundi, demain c'est ___'", "reponse_correcte": "mardi", "format_reponse": "texte_libre"},
-    {"id": 49, "exercise_id": 10, "texte": "Écoutez et transcrivez", "reponse_correcte": "samedi", "format_reponse": "texte_libre"},
-    {"id": 50, "exercise_id": 10, "texte": "Choisissez le premier jour de la semaine", "choix": ["Dimanche", "Lundi", "Mardi", "Mercredi"], "reponse_correcte": "Lundi", "format_reponse": "choix_multiple"},
-    
-    {"id": 51, "exercise_id": 11, "texte": "Complétez: 'M___di'", "reponse_correcte": "ar", "format_reponse": "texte_libre"},
-    {"id": 52, "exercise_id": 11, "texte": "Choisissez le jour après mercredi", "choix": ["Lundi", "Mardi", "Jeudi", "Vendredi"], "reponse_correcte": "Jeudi", "format_reponse": "choix_multiple"},
-    {"id": 53, "exercise_id": 11, "texte": "Reliez: Samedi → ...", "choix": ["Travail", "École", "Weekend", "Cours"], "reponse_correcte": "Weekend", "format_reponse": "choix_multiple"},
-    {"id": 54, "exercise_id": 11, "texte": "Écrivez les jours du weekend", "reponse_correcte": "samedi dimanche", "format_reponse": "texte_libre"},
-    {"id": 55, "exercise_id": 11, "texte": "Trouvez l'erreur: lundi, mardi, jeudi, mercredi", "reponse_correcte": "mercredi", "format_reponse": "texte_libre"},
-    
-    {"id": 56, "exercise_id": 12, "texte": "Écoutez et écrivez le jour", "reponse_correcte": "vendredi", "format_reponse": "texte_libre"},
-    {"id": 57, "exercise_id": 12, "texte": "Complétez: 'Je vais à l'école du ___ au vendredi'", "reponse_correcte": "lundi", "format_reponse": "texte_libre"},
-    {"id": 58, "exercise_id": 12, "texte": "Choisissez le jour avant samedi", "choix": ["Jeudi", "Vendredi", "Dimanche", "Lundi"], "reponse_correcte": "Vendredi", "format_reponse": "choix_multiple"},
-    {"id": 59, "exercise_id": 12, "texte": "Écoutez et transcrivez", "reponse_correcte": "Aujourd'hui c'est jeudi", "format_reponse": "texte_libre"},
-    {"id": 60, "exercise_id": 12, "texte": "Écrivez: 'Le marché est le dimanche'", "reponse_correcte": "Le marché est le dimanche", "format_reponse": "texte_libre"},
-    
-    
-    {"id": 61, "exercise_id": 13, "texte": "Écoutez et répétez", "reponse_correcte": "boulangerie", "format_reponse": "texte_libre"},
-    {"id": 62, "exercise_id": 13, "texte": "Choisissez le magasin entendu", "choix": ["Boulangerie", "Pharmacie", "Supermarché", "Librairie"], "reponse_correcte": "Pharmacie", "format_reponse": "choix_multiple"},
-    {"id": 63, "exercise_id": 13, "texte": "Écoutez et complétez: 'J'achète du pain à la ___'", "reponse_correcte": "boulangerie", "format_reponse": "texte_libre"},
-    {"id": 64, "exercise_id": 13, "texte": "Écoutez et transcrivez", "reponse_correcte": "Je vais au supermarché", "format_reponse": "texte_libre"},
-    {"id": 65, "exercise_id": 13, "texte": "Associez: Médicaments → ...", "choix": ["Boulangerie", "Pharmacie", "Supermarché", "Boucherie"], "reponse_correcte": "Pharmacie", "format_reponse": "choix_multiple"},
-    
-    {"id": 66, "exercise_id": 14, "texte": "Complétez: 'J'achète des livres à la ___'", "reponse_correcte": "librairie", "format_reponse": "texte_libre"},
-    {"id": 67, "exercise_id": 14, "texte": "Choisissez le magasin pour acheter de la viande", "choix": ["Boulangerie", "Pharmacie", "Boucherie", "Pâtisserie"], "reponse_correcte": "Boucherie", "format_reponse": "choix_multiple"},
-    {"id": 68, "exercise_id": 14, "texte": "Reliez: Pain → ...", "choix": ["Boucherie", "Boulangerie", "Pharmacie", "Épicerie"], "reponse_correcte": "Boulangerie", "format_reponse": "choix_multiple"},
-    {"id": 69, "exercise_id": 14, "texte": "Écrivez: 'Je vais à la pharmacie'", "reponse_correcte": "Je vais à la pharmacie", "format_reponse": "texte_libre"},
-    {"id": 70, "exercise_id": 14, "texte": "Trouvez l'intrus", "choix": ["Pain", "Croissant", "Gâteau", "Viande"], "reponse_correcte": "Viande", "format_reponse": "choix_multiple"},
-    
-    {"id": 71, "exercise_id": 15, "texte": "Écoutez et écrivez le magasin", "reponse_correcte": "épicerie", "format_reponse": "texte_libre"},
-    {"id": 72, "exercise_id": 15, "texte": "Complétez: 'On achète des médicaments à la ___'", "reponse_correcte": "pharmacie", "format_reponse": "texte_libre"},
-    {"id": 73, "exercise_id": 15, "texte": "Choisissez le magasin ouvert le dimanche", "choix": ["Boulangerie", "Pharmacie", "Bureau de poste", "Tous"], "reponse_correcte": "Boulangerie", "format_reponse": "choix_multiple"},
-    {"id": 74, "exercise_id": 15, "texte": "Écoutez et transcrivez", "reponse_correcte": "La boulangerie est ouverte à 7h", "format_reponse": "texte_libre"},
-    {"id": 75, "exercise_id": 15, "texte": "Écrivez: 'Le supermarché a tout'", "reponse_correcte": "Le supermarché a tout", "format_reponse": "texte_libre"},
-    
-    {"id": 76, "exercise_id": 16, "texte": "Écoutez et répétez", "reponse_correcte": "Il fait beau", "format_reponse": "texte_libre"},
-    {"id": 77, "exercise_id": 16, "texte": "Choisissez la météo entendue", "choix": ["Il fait beau", "Il pleut", "Il neige", "Il fait froid"], "reponse_correcte": "Il pleut", "format_reponse": "choix_multiple"},
-    {"id": 78, "exercise_id": 16, "texte": "Écoutez et complétez: 'Aujourd'hui il ___'", "reponse_correcte": "neige", "format_reponse": "texte_libre"},
-    {"id": 79, "exercise_id": 16, "texte": "Écoutez et transcrivez", "reponse_correcte": "Il fait chaud", "format_reponse": "texte_libre"},
-    {"id": 80, "exercise_id": 16, "texte": "Associez: Parapluie → ...", "choix": ["Soleil", "Pluie", "Neige", "Vent"], "reponse_correcte": "Pluie", "format_reponse": "choix_multiple"},
-    
-    {"id": 81, "exercise_id": 17, "texte": "Complétez: 'Quand il fait chaud, on va à la ___'", "reponse_correcte": "plage", "format_reponse": "texte_libre"},
-    {"id": 82, "exercise_id": 17, "texte": "Choisissez l'objet pour la neige", "choix": ["Parapluie", "Lunettes de soleil", "Bonnet", "Éventail"], "reponse_correcte": "Bonnet", "format_reponse": "choix_multiple"},
-    {"id": 83, "exercise_id": 17, "texte": "Reliez: Vent → ...", "choix": ["Chaud", "Froid", "Fort", "Humide"], "reponse_correcte": "Fort", "format_reponse": "choix_multiple"},
-    {"id": 84, "exercise_id": 17, "texte": "Écrivez: 'En été, il fait chaud'", "reponse_correcte": "En été, il fait chaud", "format_reponse": "texte_libre"},
-    {"id": 85, "exercise_id": 17, "texte": "Trouvez l'intrus", "choix": ["Nuage", "Soleil", "Pluie", "Chaussures"], "reponse_correcte": "Chaussures", "format_reponse": "choix_multiple"},
-    
-    {"id": 86, "exercise_id": 18, "texte": "Écoutez et écrivez la météo", "reponse_correcte": "il fait froid", "format_reponse": "texte_libre"},
-    {"id": 87, "exercise_id": 18, "texte": "Complétez: 'Quand il pleut, on prend un ___'", "reponse_correcte": "parapluie", "format_reponse": "texte_libre"},
-    {"id": 88, "exercise_id": 18, "texte": "Choisissez la saison chaude", "choix": ["Hiver", "Printemps", "Été", "Automne"], "reponse_correcte": "Été", "format_reponse": "choix_multiple"},
-    {"id": 89, "exercise_id": 18, "texte": "Écoutez et transcrivez", "reponse_correcte": "Demain il fera beau", "format_reponse": "texte_libre"},
-    {"id": 90, "exercise_id": 18, "texte": "Écrivez: 'En hiver, il fait froid'", "reponse_correcte": "En hiver, il fait froid", "format_reponse": "texte_libre"},
-    
-    
-    {"id": 91, "exercise_id": 19, "texte": "Écoutez et répétez", "reponse_correcte": "J'ai mangé", "format_reponse": "texte_libre"},
-    {"id": 92, "exercise_id": 19, "texte": "Choisissez la phrase entendue", "choix": ["Je mange", "J'ai mangé", "Je vais manger", "Je mangeais"], "reponse_correcte": "J'ai mangé", "format_reponse": "choix_multiple"},
-    {"id": 93, "exercise_id": 19, "texte": "Écoutez et complétez: 'Hier, je ___ à la piscine'", "reponse_correcte": "suis allé", "format_reponse": "texte_libre"},
-    {"id": 94, "exercise_id": 19, "texte": "Écoutez et transcrivez", "reponse_correcte": "Nous avons regardé un film", "format_reponse": "texte_libre"},
-    {"id": 95, "exercise_id": 19, "texte": "Associez: Passé composé → ...", "choix": ["Hier", "Aujourd'hui", "Demain", "Tous les jours"], "reponse_correcte": "Hier", "format_reponse": "choix_multiple"},
-    
-    {"id": 96, "exercise_id": 20, "texte": "Complétez: 'Hier, je ___ (aller) au cinéma'", "reponse_correcte": "suis allé", "format_reponse": "texte_libre"},
-    {"id": 97, "exercise_id": 20, "texte": "Choisissez la forme correcte", "choix": ["J'ai fini", "Je fini", "Je finis", "Je finirai"], "reponse_correcte": "J'ai fini", "format_reponse": "choix_multiple"},
-    {"id": 98, "exercise_id": 20, "texte": "Reliez: Avoir → ...", "choix": ["Parti", "Allé", "Venu", "Fini"], "reponse_correcte": "Fini", "format_reponse": "choix_multiple"},
-    {"id": 99, "exercise_id": 20, "texte": "Écrivez: 'Hier, j'ai travaillé'", "reponse_correcte": "Hier, j'ai travaillé", "format_reponse": "texte_libre"},
-    {"id": 100, "exercise_id": 20, "texte": "Trouvez l'erreur: 'J'ai allé au parc'", "reponse_correcte": "allé", "format_reponse": "texte_libre"},
-    
-    {"id": 101, "exercise_id": 21, "texte": "Écoutez et écrivez la phrase", "reponse_correcte": "Elle a lu un livre", "format_reponse": "texte_libre"},
-    {"id": 102, "exercise_id": 21, "texte": "Complétez: 'Nous ___ (manger) au restaurant'", "reponse_correcte": "avons mangé", "format_reponse": "texte_libre"},
-    {"id": 103, "exercise_id": 21, "texte": "Choisissez l'auxiliaire pour 'partir'", "choix": ["Avoir", "Être", "Les deux", "Aucun"], "reponse_correcte": "Être", "format_reponse": "choix_multiple"},
-    {"id": 104, "exercise_id": 21, "texte": "Écoutez et transcrivez", "reponse_correcte": "Ils sont arrivés hier", "format_reponse": "texte_libre"},
-    {"id": 105, "exercise_id": 21, "texte": "Écrivez: 'Tu as regardé la télévision'", "reponse_correcte": "Tu as regardé la télévision", "format_reponse": "texte_libre"},
-    
-    {"id": 106, "exercise_id": 22, "texte": "Écoutez et répétez", "reponse_correcte": "J'aime le chocolat", "format_reponse": "texte_libre"},
-    {"id": 107, "exercise_id": 22, "texte": "Choisissez l'opinion entendue", "choix": ["J'aime", "Je n'aime pas", "Je déteste", "J'adore"], "reponse_correcte": "Je n'aime pas", "format_reponse": "choix_multiple"},
-    {"id": 108, "exercise_id": 22, "texte": "Écoutez et complétez: 'Je ___ les épinards'", "reponse_correcte": "déteste", "format_reponse": "texte_libre"},
-    {"id": 109, "exercise_id": 22, "texte": "Écoutez et transcrivez", "reponse_correcte": "Il adore le football", "format_reponse": "texte_libre"},
-    {"id": 110, "exercise_id": 22, "texte": "Associez: Beaucoup → ...", "choix": ["J'aime", "J'adore", "Je n'aime pas", "Je déteste"], "reponse_correcte": "J'adore", "format_reponse": "choix_multiple"},
-    
-    {"id": 111, "exercise_id": 23, "texte": "Complétez: 'Je ___ regarder la télévision'", "reponse_correcte": "aime", "format_reponse": "texte_libre"},
-    {"id": 112, "exercise_id": 23, "texte": "Choisissez la forme négative", "choix": ["Je n'aime pas", "J'aime", "J'adore", "Je déteste"], "reponse_correcte": "Je n'aime pas", "format_reponse": "choix_multiple"},
-    {"id": 113, "exercise_id": 23, "texte": "Reliez: Détester → ...", "choix": ["Beaucoup", "Un peu", "Pas du tout", "Énormément"], "reponse_correcte": "Pas du tout", "format_reponse": "choix_multiple"},
-    {"id": 114, "exercise_id": 23, "texte": "Écrivez: 'Elle aime la musique'", "reponse_correcte": "Elle aime la musique", "format_reponse": "texte_libre"},
-    {"id": 115, "exercise_id": 23, "texte": "Trouvez l'intrus", "choix": ["Aimer", "Adorer", "Détester", "Manger"], "reponse_correcte": "Manger", "format_reponse": "choix_multiple"},
-    
-    {"id": 116, "exercise_id": 24, "texte": "Écoutez et écrivez l'opinion", "reponse_correcte": "je préfère le thé", "format_reponse": "texte_libre"},
-    {"id": 117, "exercise_id": 24, "texte": "Complétez: 'Je ___ pas le café'", "reponse_correcte": "n'aime", "format_reponse": "texte_libre"},
-    {"id": 118, "exercise_id": 24, "texte": "Choisissez l'expression la plus forte", "choix": ["J'aime", "J'adore", "Je préfère", "J'apprécie"], "reponse_correcte": "J'adore", "format_reponse": "choix_multiple"},
-    {"id": 119, "exercise_id": 24, "texte": "Écoutez et transcrivez", "reponse_correcte": "Nous détestons le froid", "format_reponse": "texte_libre"},
-    {"id": 120, "exercise_id": 24, "texte": "Écrivez: 'Tu aimes les animaux ?'", "reponse_correcte": "Tu aimes les animaux ?", "format_reponse": "texte_libre"},
-    
-    
-    {"id": 121, "exercise_id": 25, "texte": "Écoutez et répétez", "reponse_correcte": "actualités", "format_reponse": "texte_libre"},
-    {"id": 122, "exercise_id": 25, "texte": "Choisissez le sujet entendu", "choix": ["Politique", "Sport", "Culture", "Économie"], "reponse_correcte": "Sport", "format_reponse": "choix_multiple"},
-    {"id": 123, "exercise_id": 25, "texte": "Écoutez et complétez: 'Le ___ présente les nouvelles'", "reponse_correcte": "journaliste", "format_reponse": "texte_libre"},
-    {"id": 124, "exercise_id": 25, "texte": "Écoutez et transcrivez", "reponse_correcte": "La réunion a eu lieu hier", "format_reponse": "texte_libre"},
-    {"id": 125, "exercise_id": 25, "texte": "Associez: Télévision → ...", "choix": ["Radio", "Journal", "Téléspectateur", "Lecteur"], "reponse_correcte": "Téléspectateur", "format_reponse": "choix_multiple"},
-    
-    {"id": 126, "exercise_id": 26, "texte": "Complétez: 'La ___ donne les informations'", "reponse_correcte": "télévision", "format_reponse": "texte_libre"},
-    {"id": 127, "exercise_id": 26, "texte": "Choisissez le média papier", "choix": ["Télévision", "Radio", "Journal", "Internet"], "reponse_correcte": "Journal", "format_reponse": "choix_multiple"},
-    {"id": 128, "exercise_id": 26, "texte": "Reliez: Reporter → ...", "choix": ["Lire", "Écouter", "Regarder", "Enquêter"], "reponse_correcte": "Enquêter", "format_reponse": "choix_multiple"},
-    {"id": 129, "exercise_id": 26, "texte": "Écrivez: 'Je regarde les informations'", "reponse_correcte": "Je regarde les informations", "format_reponse": "texte_libre"},
-    {"id": 130, "exercise_id": 26, "texte": "Trouvez l'intrus", "choix": ["Journal", "Reporter", "Article", "Chanson"], "reponse_correcte": "Chanson", "format_reponse": "choix_multiple"},
-    
-    {"id": 131, "exercise_id": 27, "texte": "Écoutez et écrivez le mot", "reponse_correcte": "interview", "format_reponse": "texte_libre"},
-    {"id": 132, "exercise_id": 27, "texte": "Complétez: 'Les ___ parlent des événements'", "reponse_correcte": "médias", "format_reponse": "texte_libre"},
-    {"id": 133, "exercise_id": 27, "texte": "Choisissez le synonyme de 'journal télévisé'", "choix": ["JT", "BD", "CD", "DVD"], "reponse_correcte": "JT", "format_reponse": "choix_multiple"},
-    {"id": 134, "exercise_id": 27, "texte": "Écoutez et transcrivez", "reponse_correcte": "Le journaliste pose des questions", "format_reponse": "texte_libre"},
-    {"id": 135, "exercise_id": 27, "texte": "Écrivez: 'La radio diffuse des émissions'", "reponse_correcte": "La radio diffuse des émissions", "format_reponse": "texte_libre"},
-    
-    {"id": 136, "exercise_id": 28, "texte": "Écoutez et répétez", "reponse_correcte": "Peut-être", "format_reponse": "texte_libre"},
-    {"id": 137, "exercise_id": 28, "texte": "Choisissez l'expression de doute", "choix": ["Certainement", "Sûrement", "Peut-être", "Absolument"], "reponse_correcte": "Peut-être", "format_reponse": "choix_multiple"},
-    {"id": 138, "exercise_id": 28, "texte": "Écoutez et complétez: '___ il viendra'", "reponse_correcte": "Probablement", "format_reponse": "texte_libre"},
-    {"id": 139, "exercise_id": 28, "texte": "Écoutez et transcrivez", "reponse_correcte": "Je ne suis pas sûr", "format_reponse": "texte_libre"},
-    {"id": 140, "exercise_id": 28, "texte": "Associez: Sans aucun doute → ...", "choix": ["Peut-être", "Probablement", "Certainement", "Possiblement"], "reponse_correcte": "Certainement", "format_reponse": "choix_multiple"},
-    
-    {"id": 141, "exercise_id": 29, "texte": "Complétez: 'Je ___ viendrai' (probabilité forte)", "reponse_correcte": "probablement", "format_reponse": "texte_libre"},
-    {"id": 142, "exercise_id": 29, "texte": "Choisissez l'expression de certitude", "choix": ["Peut-être", "Sans doute", "Éventuellement", "Possiblement"], "reponse_correcte": "Sans doute", "format_reponse": "choix_multiple"},
-    {"id": 143, "exercise_id": 29, "texte": "Reliez: Peut-être → ...", "choix": ["50%", "75%", "100%", "25%"], "reponse_correcte": "50%", "format_reponse": "choix_multiple"},
-    {"id": 144, "exercise_id": 29, "texte": "Écrivez: 'C'est certain'", "reponse_correcte": "C'est certain", "format_reponse": "texte_libre"},
-    {"id": 145, "exercise_id": 29, "texte": "Trouvez l'intrus", "choix": ["Certain", "Sûr", "Douteux", "Absolu"], "reponse_correcte": "Douteux", "format_reponse": "choix_multiple"},
-    
-    {"id": 146, "exercise_id": 30, "texte": "Écoutez et écrivez l'expression", "reponse_correcte": "c'est possible", "format_reponse": "texte_libre"},
-    {"id": 147, "exercise_id": 30, "texte": "Complétez: '___ je pourrai venir' (doute)", "reponse_correcte": "peut-être", "format_reponse": "texte_libre"},
-    {"id": 148, "exercise_id": 30, "texte": "Choisissez le synonyme de 'probablement'", "choix": ["Certainement", "Sûrement", "Vraisemblablement", "Impossiblement"], "reponse_correcte": "Vraisemblablement", "format_reponse": "choix_multiple"},
-    {"id": 149, "exercise_id": 30, "texte": "Écoutez et transcrivez", "reponse_correcte": "Il est fort possible que oui", "format_reponse": "texte_libre"},
-    {"id": 150, "exercise_id": 30, "texte": "Écrivez: 'Je viendrai sans doute'", "reponse_correcte": "Je viendrai sans doute", "format_reponse": "texte_libre"},
-    
-    
-    {"id": 151, "exercise_id": 31, "texte": "Écoutez et répétez", "reponse_correcte": "C'est la vie", "format_reponse": "texte_libre"},
-    {"id": 152, "exercise_id": 31, "texte": "Choisissez la signification de 'C'est la vie'", "choix": ["C'est bien", "C'est comme ça", "C'est difficile", "C'est fini"], "reponse_correcte": "C'est comme ça", "format_reponse": "choix_multiple"},
-    {"id": 153, "exercise_id": 31, "texte": "Écoutez et complétez: '___ n'est pas carrelée'", "reponse_correcte": "La vie", "format_reponse": "texte_libre"},
-    {"id": 154, "exercise_id": 31, "texte": "Écoutez et transcrivez", "reponse_correcte": "Poser un lapin", "format_reponse": "texte_libre"},
-    {"id": 155, "exercise_id": 31, "texte": "Associez: 'Avoir le cafard' → ...", "choix": ["Être triste", "Avoir faim", "Être fatigué", "Avoir soif"], "reponse_correcte": "Être triste", "format_reponse": "choix_multiple"},
-    
-    {"id": 156, "exercise_id": 32, "texte": "Complétez: '___ comme un coq en pâte'", "reponse_correcte": "Être", "format_reponse": "texte_libre"},
-    {"id": 157, "exercise_id": 32, "texte": "Choisissez la signification de 'Tomber dans les pommes'", "choix": ["Tomber", "Dormir", "S'évanouir", "Manger"], "reponse_correcte": "S'évanouir", "format_reponse": "choix_multiple"},
-    {"id": 158, "exercise_id": 32, "texte": "Reliez: 'Casser sa pipe' → ...", "choix": ["Parler", "Manger", "Mourir", "Travailler"], "reponse_correcte": "Mourir", "format_reponse": "choix_multiple"},
-    {"id": 159, "exercise_id": 32, "texte": "Écrivez: 'Il pleut des cordes'", "reponse_correcte": "Il pleut des cordes", "format_reponse": "texte_libre"},
-    {"id": 160, "exercise_id": 32, "texte": "Trouvez l'intrus", "choix": ["C'est la vie", "Poser un lapin", "Avoir le cafard", "Manger une pomme"], "reponse_correcte": "Manger une pomme", "format_reponse": "choix_multiple"},
-    
-    {"id": 161, "exercise_id": 33, "texte": "Écoutez et écrivez l'expression", "reponse_correcte": "coûter les yeux de la tête", "format_reponse": "texte_libre"},
-    {"id": 162, "exercise_id": 33, "texte": "Complétez: '___ les bras' (être fatigué)", "reponse_correcte": "avoir", "format_reponse": "texte_libre"},
-    {"id": 163, "exercise_id": 33, "texte": "Choisissez la signification de 'Sauter du coq à l'âne'", "choix": ["Sauter", "Changer de sujet", "Parler d'animaux", "Manger"], "reponse_correcte": "Changer de sujet", "format_reponse": "choix_multiple"},
-    {"id": 164, "exercise_id": 33, "texte": "Écoutez et transcrivez", "reponse_correcte": "Il a un chat dans la gorge", "format_reponse": "texte_libre"},
-    {"id": 165, "exercise_id": 33, "texte": "Écrivez: 'C'est la fin des haricots'", "reponse_correcte": "C'est la fin des haricots", "format_reponse": "texte_libre"},
-    
-    {"id": 166, "exercise_id": 34, "texte": "Écoutez et répétez", "reponse_correcte": "Je suis pour", "format_reponse": "texte_libre"},
-    {"id": 167, "exercise_id": 34, "texte": "Choisissez l'opinion entendue", "choix": ["Pour", "Contre", "Neutre", "Indécis"], "reponse_correcte": "Contre", "format_reponse": "choix_multiple"},
-    {"id": 168, "exercise_id": 34, "texte": "Écoutez et complétez: 'D'un ___...'", "reponse_correcte": "côté", "format_reponse": "texte_libre"},
-    {"id": 169, "exercise_id": 34, "texte": "Écoutez et transcrivez", "reponse_correcte": "Je suis d'accord avec toi", "format_reponse": "texte_libre"},
-    {"id": 170, "exercise_id": 34, "texte": "Associez: Argument → ...", "choix": ["Idée", "Émotion", "Silence", "Question"], "reponse_correcte": "Idée", "format_reponse": "choix_multiple"},
-    
-    {"id": 171, "exercise_id": 35, "texte": "Complétez: 'Je ne suis pas ___ avec toi'", "reponse_correcte": "d'accord", "format_reponse": "texte_libre"},
-    {"id": 172, "exercise_id": 35, "texte": "Choisissez le mot pour une discussion formelle", "choix": ["Débat", "Dispute", "Conversation", "Bavardage"], "reponse_correcte": "Débat", "format_reponse": "choix_multiple"},
-    {"id": 173, "exercise_id": 35, "texte": "Reliez: Pour → ...", "choix": ["Arguments positifs", "Arguments négatifs", "Neutre", "Doute"], "reponse_correcte": "Arguments positifs", "format_reponse": "choix_multiple"},
-    {"id": 174, "exercise_id": 35, "texte": "Écrivez: 'Je pense que oui'", "reponse_correcte": "Je pense que oui", "format_reponse": "texte_libre"},
-    {"id": 175, "exercise_id": 35, "texte": "Trouvez l'intrus", "choix": ["Argument", "Contre-argument", "Opinion", "Silence"], "reponse_correcte": "Silence", "format_reponse": "choix_multiple"},
-    
-    {"id": 176, "exercise_id": 36, "texte": "Écoutez et écrivez l'argument", "reponse_correcte": "c'est meilleur pour la santé", "format_reponse": "texte_libre"},
-    {"id": 177, "exercise_id": 36, "texte": "Complétez: 'D'un côté ___, mais de l'autre ___'", "reponse_correcte": "", "format_reponse": "texte_libre"},
-    {"id": 178, "exercise_id": 36, "texte": "Choisissez l'expression pour conclure", "choix": ["Pour commencer", "En conclusion", "Premièrement", "Par exemple"], "reponse_correcte": "En conclusion", "format_reponse": "choix_multiple"},
-    {"id": 179, "exercise_id": 36, "texte": "Écoutez et transcrivez", "reponse_correcte": "Je ne partage pas ton avis", "format_reponse": "texte_libre"},
-    {"id": 180, "exercise_id": 36, "texte": "Écrivez: 'À mon avis, c'est important'", "reponse_correcte": "À mon avis, c'est important", "format_reponse": "texte_libre"}
-  ]
+
+   "questions": [
+    {
+      "id": 1,
+      "exercise_id": 1,
+      "texte": "Complétez la phrase: ___ chat dort sur le canapé.",
+      "reponse_correcte": "Le",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 2,
+      "exercise_id": 1,
+      "texte": "Complétez la phrase: ___ enfants jouent dans le parc.",
+      "reponse_correcte": "Les",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 3,
+      "exercise_id": 1,
+      "texte": "Complétez la phrase: ___ femme lit un livre intéressant.",
+      "reponse_correcte": "La",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 4,
+      "exercise_id": 1,
+      "texte": "Choisissez l'article correct pour '___ école'",
+      "choix": ["Le", "La", "Les", "L'"],
+      "reponse_correcte": "L'",
+      "format_reponse": "choix_multiple"
+    },
+    {
+      "id": 5,
+      "exercise_id": 1,
+      "texte": "Complétez la phrase: ___ arbre est très grand.",
+      "reponse_correcte": "L'",
+      "format_reponse": "texte_libre"
+    },
+
+    {
+      "id": 6,
+      "exercise_id": 3,
+      "texte": "Complétez la phrase: Une robe ___ (rouge) et élégante.",
+      "reponse_correcte": "rouge",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 7,
+      "exercise_id": 3,
+      "texte": "Complétez la phrase: Des maisons ___ (blanc) et bleues.",
+      "reponse_correcte": "blanches",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 8,
+      "exercise_id": 3,
+      "texte": "Complétez la phrase: Un problème ___ (compliqué) à résoudre.",
+      "reponse_correcte": "compliqué",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 9,
+      "exercise_id": 3,
+      "texte": "Choisissez la forme correcte:",
+      "choix": [
+        "Des livres interessants",
+        "Des livres intéressants",
+        "Des livres intéréssants",
+        "Des livres interressants"
+      ],
+      "reponse_correcte": "Des livres intéressants",
+      "format_reponse": "choix_multiple"
+    },
+    {
+      "id": 10,
+      "exercise_id": 3,
+      "texte": "Complétez la phrase: Une journée ___ (merveilleux) ensoleillée.",
+      "reponse_correcte": "merveilleuse",
+      "format_reponse": "texte_libre"
+    },
+
+    {
+      "id": 11,
+      "exercise_id": 5,
+      "texte": "Complétez le dialogue: A: Bonjour! Comment ça ___?",
+      "reponse_correcte": "va",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 12,
+      "exercise_id": 5,
+      "texte": "Complétez la phrase: Quand on quitte quelqu'un le soir, on dit: ___",
+      "reponse_correcte": "Bonsoir",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 13,
+      "exercise_id": 5,
+      "texte": "Complétez la phrase: Pour remercier quelqu'un, on dit: ___",
+      "reponse_correcte": "Merci",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 14,
+      "exercise_id": 5,
+      "texte": "Choisissez la salutation appropriée pour un ami:",
+      "choix": ["Bonjour", "Salut", "Bonsoir", "Bonne nuit"],
+      "reponse_correcte": "Salut",
+      "format_reponse": "choix_multiple"
+    },
+    {
+      "id": 15,
+      "exercise_id": 5,
+      "texte": "Complétez la phrase: Quand on se couche, on dit: ___",
+      "reponse_correcte": "Bonne nuit",
+      "format_reponse": "texte_libre"
+    },
+
+    {
+      "id": 16,
+      "exercise_id": 7,
+      "texte": "Complétez la phrase: Je ___ (parler) français couramment.",
+      "reponse_correcte": "parle",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 17,
+      "exercise_id": 7,
+      "texte": "Complétez la phrase: Tu ___ (manger) une pomme chaque jour.",
+      "reponse_correcte": "manges",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 18,
+      "exercise_id": 7,
+      "texte": "Complétez la phrase: Nous ___ (aimer) voyager en été.",
+      "reponse_correcte": "aimons",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 19,
+      "exercise_id": 7,
+      "texte": "Choisissez la conjugaison correcte pour 'ils/chanter':",
+      "choix": ["il chante", "ils chantent", "ils chantes", "ils chante"],
+      "reponse_correcte": "ils chantent",
+      "format_reponse": "choix_multiple"
+    },
+    {
+      "id": 20,
+      "exercise_id": 7,
+      "texte": "Complétez la phrase: Vous ___ (travailler) ensemble sur ce projet.",
+      "reponse_correcte": "travaillez",
+      "format_reponse": "texte_libre"
+    },
+
+    {
+      "id": 21,
+      "exercise_id": 9,
+      "texte": "Complétez la phrase: ___ suis étudiant en médecine.",
+      "reponse_correcte": "Je",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 22,
+      "exercise_id": 9,
+      "texte": "Complétez la phrase: ___ aime lire des romans policiers.",
+      "reponse_correcte": "Il",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 23,
+      "exercise_id": 9,
+      "texte": "Complétez la phrase: ___ allons au cinéma ce soir.",
+      "reponse_correcte": "Nous",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 24,
+      "exercise_id": 9,
+      "texte": "Choisissez le pronom correct pour remplacer 'Marie et Pierre':",
+      "choix": ["Ils", "Elles", "Nous", "Vous"],
+      "reponse_correcte": "Ils",
+      "format_reponse": "choix_multiple"
+    },
+    {
+      "id": 25,
+      "exercise_id": 9,
+      "texte": "Complétez la phrase: ___ êtes toujours à l'heure.",
+      "reponse_correcte": "Vous",
+      "format_reponse": "texte_libre"
+    },
+
+    {
+      "id": 26,
+      "exercise_id": 11,
+      "texte": "Complétez la phrase: Elle a ___ (manger) tout le gâteau.",
+      "reponse_correcte": "mangé",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 27,
+      "exercise_id": 11,
+      "texte": "Complétez la phrase: Les fleurs que j'ai ___ (cueillir) ce matin.",
+      "reponse_correcte": "cueillies",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 28,
+      "exercise_id": 11,
+      "texte": "Complétez la phrase: La lettre qu'il a ___ (écrire) hier.",
+      "reponse_correcte": "écrite",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 29,
+      "exercise_id": 11,
+      "texte": "Choisissez la forme correcte:",
+      "choix": [
+        "Les enfants ont couru",
+        "Les enfants ont courus",
+        "Les enfants ont courues",
+        "Les enfants ont couru"
+      ],
+      "reponse_correcte": "Les enfants ont couru",
+      "format_reponse": "choix_multiple"
+    },
+    {
+      "id": 30,
+      "exercise_id": 11,
+      "texte": "Complétez la phrase: Elle s'est ___ (blesser) au genou.",
+      "reponse_correcte": "blessée",
+      "format_reponse": "texte_libre"
+    },
+
+    {
+      "id": 31,
+      "exercise_id": 13,
+      "texte": "Complétez: 10 + 15 = ___",
+      "reponse_correcte": "vingt-cinq",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 32,
+      "exercise_id": 13,
+      "texte": "Complétez: 100 - 30 = ___",
+      "reponse_correcte": "soixante-dix",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 33,
+      "exercise_id": 13,
+      "texte": "Écrivez en lettres: 42",
+      "reponse_correcte": "quarante-deux",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 34,
+      "exercise_id": 13,
+      "texte": "Choisissez l'écriture correcte de 99:",
+      "choix": [
+        "quatre-vingt-dix-neuf",
+        "nonante-neuf",
+        "cent-moins-un",
+        "quatre-vingt-dix"
+      ],
+      "reponse_correcte": "quatre-vingt-dix-neuf",
+      "format_reponse": "choix_multiple"
+    },
+    {
+      "id": 35,
+      "exercise_id": 13,
+      "texte": "Complétez: Il y a ___ jours dans une semaine.",
+      "reponse_correcte": "sept",
+      "format_reponse": "texte_libre"
+    },
+
+    {
+      "id": 36,
+      "exercise_id": 15,
+      "texte": "Complétez la phrase: Nous ___ fatigués après la randonnée.",
+      "reponse_correcte": "sommes",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 37,
+      "exercise_id": 15,
+      "texte": "Complétez la phrase: Tu ___ un beau sourire.",
+      "reponse_correcte": "as",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 38,
+      "exercise_id": 15,
+      "texte": "Complétez la phrase: Elles ___ très heureuses de la nouvelle.",
+      "reponse_correcte": "sont",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 39,
+      "exercise_id": 15,
+      "texte": "Choisissez la conjugaison correcte:",
+      "choix": [
+        "J'ai soif",
+        "Je suis soif",
+        "J'as soif",
+        "Je ai soif"
+      ],
+      "reponse_correcte": "J'ai soif",
+      "format_reponse": "choix_multiple"
+    },
+    {
+      "id": 40,
+      "exercise_id": 15,
+      "texte": "Complétez la phrase: Vous ___ faim?",
+      "reponse_correcte": "avez",
+      "format_reponse": "texte_libre"
+    },
+
+    {
+      "id": 41,
+      "exercise_id": 17,
+      "texte": "Complétez la phrase: Il faut que tu ___ (venir) à l'heure.",
+      "reponse_correcte": "viennes",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 42,
+      "exercise_id": 17,
+      "texte": "Complétez la phrase: Je veux que nous ___ (pouvoir) finir ce travail.",
+      "reponse_correcte": "puissions",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 43,
+      "exercise_id": 17,
+      "texte": "Complétez la phrase: Il est important que vous ___ (être) prudents.",
+      "reponse_correcte": "soyez",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 44,
+      "exercise_id": 17,
+      "texte": "Choisissez la forme correcte du subjonctif pour 'aller':",
+      "choix": [
+        "que j'aille",
+        "que je vais",
+        "que je allais",
+        "que j'alles"
+      ],
+      "reponse_correcte": "que j'aille",
+      "format_reponse": "choix_multiple"
+    },
+    {
+      "id": 45,
+      "exercise_id": 17,
+      "texte": "Complétez la phrase: Je doute qu'il ___ (savoir) la réponse.",
+      "reponse_correcte": "sache",
+      "format_reponse": "texte_libre"
+    },
+
+    {
+      "id": 46,
+      "exercise_id": 19,
+      "texte": "Complétez la phrase: Les informations que tu m'as ___ (donner) étaient utiles.",
+      "reponse_correcte": "données",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 47,
+      "exercise_id": 19,
+      "texte": "Complétez la phrase: La seule chose qu'elle a ___ (faire) hier.",
+      "reponse_correcte": "faite",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 48,
+      "exercise_id": 19,
+      "texte": "Complétez la phrase: Les fruits que nous avons ___ (manger) ce matin.",
+      "reponse_correcte": "mangés",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 49,
+      "exercise_id": 19,
+      "texte": "Choisissez la forme correcte:",
+      "choix": [
+        "les lettres que j'ai écrit",
+        "les lettres que j'ai écrite",
+        "les lettres que j'ai écrites",
+        "les lettres que j'ai écris"
+      ],
+      "reponse_correcte": "les lettres que j'ai écrites",
+      "format_reponse": "choix_multiple"
+    },
+    {
+      "id": 50,
+      "exercise_id": 19,
+      "texte": "Complétez la phrase: Les heures qu'elle a ___ (passer) à étudier.",
+      "reponse_correcte": "passées",
+      "format_reponse": "texte_libre"
+    },
+
+    {
+      "id": 51,
+      "exercise_id": 21,
+      "texte": "Complétez l'expression: Poser un ___ (signifie ne pas venir à un rendez-vous)",
+      "reponse_correcte": "lapin",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 52,
+      "exercise_id": 21,
+      "texte": "Complétez l'expression: Avoir un chat dans la ___ (signifie être enroué)",
+      "reponse_correcte": "gorge",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 53,
+      "exercise_id": 21,
+      "texte": "Complétez l'expression: Mettre son grain de ___ (signifie donner son opinion)",
+      "reponse_correcte": "sel",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 54,
+      "exercise_id": 21,
+      "texte": "Choisissez la signification de 'Casser sa pipe':",
+      "choix": [
+        "Parler fort",
+        "Mourir",
+        "Casser un objet",
+        "Manger beaucoup"
+      ],
+      "reponse_correcte": "Mourir",
+      "format_reponse": "choix_multiple"
+    },
+    {
+      "id": 55,
+      "exercise_id": 21,
+      "texte": "Complétez l'expression: Il pleut des ___ (signifie qu'il pleut très fort)",
+      "reponse_correcte": "cordes",
+      "format_reponse": "texte_libre"
+    },
+
+    {
+      "id": 56,
+      "exercise_id": 23,
+      "texte": "Complétez la phrase: Hier, nous ___ (aller) au cinéma.",
+      "reponse_correcte": "sommes allés",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 57,
+      "exercise_id": 23,
+      "texte": "Complétez la phrase: Elle ___ (naître) en 1990.",
+      "reponse_correcte": "est née",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 58,
+      "exercise_id": 23,
+      "texte": "Complétez la phrase: Ils ___ (partir) tôt ce matin.",
+      "reponse_correcte": "sont partis",
+      "format_reponse": "texte_libre"
+    },
+    {
+      "id": 59,
+      "exercise_id": 23,
+      "texte": "Choisissez la conjugaison correcte:",
+      "choix": [
+        "J'ai descendu les escaliers",
+        "Je suis descendu les escaliers",
+        "J'ai descendu les escaliers",
+        "Je suis descendu les escaliers"
+      ],
+      "reponse_correcte": "J'ai descendu les escaliers",
+      "format_reponse": "choix_multiple"
+    },
+    {
+      "id": 60,
+      "exercise_id": 23,
+      "texte": "Complétez la phrase: Tu ___ (rentrer) tard hier soir.",
+      "reponse_correcte": "es rentré",
+      "format_reponse": "texte_libre"
+    },
+{
+  "id": 61,
+  "exercise_id": 18,
+  "texte": "Choisissez la phrase correcte avec le pronom relatif 'qui':",
+  "choix": [
+    "La femme qui je parle",
+    "La femme qui parle",
+    "La femme que parle",
+    "La femme dont parle"
+  ],
+  "reponse_correcte": "La femme qui parle",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 62,
+  "exercise_id": 18,
+  "texte": "Complétez: L'homme ___ tu as vu est mon frère.",
+  "reponse_correcte": "que",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 63,
+  "exercise_id": 18,
+  "texte": "Choisissez la phrase correcte avec 'dont':",
+  "choix": [
+    "Le livre dont j'ai besoin",
+    "Le livre que j'ai besoin",
+    "Le livre qui j'ai besoin",
+    "Le livre où j'ai besoin"
+  ],
+  "reponse_correcte": "Le livre dont j'ai besoin",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 64,
+  "exercise_id": 18,
+  "texte": "Choisissez la phrase correcte avec 'où':",
+  "choix": [
+    "La ville où je suis né",
+    "La ville que je suis né",
+    "La ville qui je suis né",
+    "La ville dont je suis né"
+  ],
+  "reponse_correcte": "La ville où je suis né",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 65,
+  "exercise_id": 18,
+  "texte": "Complétez: C'est la raison ___ je suis venu.",
+  "reponse_correcte": "pour laquelle",
+  "format_reponse": "texte_libre"
+},
+
+{
+  "id": 66,
+  "exercise_id": 20,
+  "texte": "Choisissez la phrase correcte:",
+  "choix": [
+    "À demain !",
+    "A demain !",
+    "À demain",
+    "A demain"
+  ],
+  "reponse_correcte": "À demain !",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 67,
+  "exercise_id": 20,
+  "texte": "Choisissez la bonne orthographe:",
+  "choix": [
+    "Ces livres sont intéressants",
+    "Ses livres sont intéressants",
+    "C'est livres sont intéressants",
+    "S'est livres sont intéressants"
+  ],
+  "reponse_correcte": "Ces livres sont intéressants",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 68,
+  "exercise_id": 20,
+  "texte": "Choisissez la phrase correcte:",
+  "choix": [
+    "Je vais à la plage",
+    "Je vais a la plage",
+    "Je vais à la plage.",
+    "Je vais a la plage."
+  ],
+  "reponse_correcte": "Je vais à la plage",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 69,
+  "exercise_id": 20,
+  "texte": "Choisissez la bonne forme:",
+  "choix": [
+    "Ils ont mangé leur repas",
+    "Ils ont mangé leurs repas",
+    "Ils ont mangé leur repas.",
+    "Ils ont mangé leurs repas."
+  ],
+  "reponse_correcte": "Ils ont mangé leur repas",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 70,
+  "exercise_id": 20,
+  "texte": "Complétez: ___ trop tard !",
+  "reponse_correcte": "C'est",
+  "format_reponse": "texte_libre"
+},
+
+{
+  "id": 71,
+  "exercise_id": 22,
+  "texte": "Choisissez le synonyme de 'collègue':",
+  "choix": [
+    "Ami",
+    "Patron",
+    "Associé",
+    "Client"
+  ],
+  "reponse_correcte": "Associé",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 72,
+  "exercise_id": 22,
+  "texte": "Choisissez le terme pour 'réunion de travail':",
+  "choix": [
+    "Rendez-vous",
+    "Conférence",
+    "Entrevue",
+    "Briefing"
+  ],
+  "reponse_correcte": "Briefing",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 73,
+  "exercise_id": 22,
+  "texte": "Complétez: Envoyer un document par courrier électronique = ___",
+  "reponse_correcte": "mailer",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 74,
+  "exercise_id": 22,
+  "texte": "Choisissez l'équivalent de 'délai':",
+  "choix": [
+    "Date limite",
+    "Retard",
+    "Avance",
+    "Pause"
+  ],
+  "reponse_correcte": "Date limite",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 75,
+  "exercise_id": 22,
+  "texte": "Choisissez le terme pour 'augmentation de salaire':",
+  "choix": [
+    "Promotion",
+    "Prime",
+    "Avancement",
+    "Rémunération"
+  ],
+  "reponse_correcte": "Promotion",
+  "format_reponse": "choix_multiple"
+},
+
+{
+  "id": 76,
+  "exercise_id": 24,
+  "texte": "Choisissez la conjugaison correcte à l'imparfait pour 'nous/être':",
+  "choix": [
+    "Nous étions",
+    "Nous sommes",
+    "Nous étions",
+    "Nous êtions"
+  ],
+  "reponse_correcte": "Nous étions",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 77,
+  "exercise_id": 24,
+  "texte": "Complétez: Quand j'étais jeune, je ___ (jouer) au football.",
+  "reponse_correcte": "jouais",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 78,
+  "exercise_id": 24,
+  "texte": "Choisissez la phrase correcte:",
+  "choix": [
+    "Il faisait beau hier",
+    "Il fait beau hier",
+    "Il fesait beau hier",
+    "Il faisait beau hier."
+  ],
+  "reponse_correcte": "Il faisait beau hier",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 79,
+  "exercise_id": 24,
+  "texte": "Complétez: Vous ___ (avoir) l'habitude de vous lever tôt.",
+  "reponse_correcte": "aviez",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 80,
+  "exercise_id": 24,
+  "texte": "Choisissez la bonne conjugaison pour 'elles/prendre' à l'imparfait:",
+  "choix": [
+    "Elles prenaient",
+    "Elles prennaient",
+    "Elles prennent",
+    "Elles prenaient"
+  ],
+  "reponse_correcte": "Elles prenaient",
+  "format_reponse": "choix_multiple"
+},
+
+{
+  "id": 81,
+  "exercise_id": 26,
+  "texte": "Choisissez la transformation correcte au discours indirect: 'Je viendrai demain' → Il a dit ___",
+  "choix": [
+    "qu'il viendrait le lendemain",
+    "qu'il viendra demain",
+    "qu'il vient demain",
+    "qu'il vienne demain"
+  ],
+  "reponse_correcte": "qu'il viendrait le lendemain",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 82,
+  "exercise_id": 26,
+  "texte": "Complétez: 'Où es-tu ?' → Elle m'a demandé où ___",
+  "reponse_correcte": "j'étais",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 83,
+  "exercise_id": 26,
+  "texte": "Choisissez la phrase correcte au discours indirect:",
+  "choix": [
+    "Il a dit qu'il avait faim",
+    "Il a dit qu'il a faim",
+    "Il a dit qu'il aurait faim",
+    "Il a dit qu'il ait faim"
+  ],
+  "reponse_correcte": "Il a dit qu'il avait faim",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 84,
+  "exercise_id": 26,
+  "texte": "Complétez: 'Fais tes devoirs !' → Elle m'a dit de ___",
+  "reponse_correcte": "faire mes devoirs",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 85,
+  "exercise_id": 26,
+  "texte": "Choisissez la transformation correcte: 'Nous partons maintenant' → Ils ont annoncé ___",
+  "choix": [
+    "qu'ils partent maintenant",
+    "qu'ils partaient alors",
+    "qu'ils partiraient alors",
+    "qu'ils sont partis alors"
+  ],
+  "reponse_correcte": "qu'ils partaient alors",
+  "format_reponse": "choix_multiple"
+},
+
+{
+  "id": 86,
+  "exercise_id": 28,
+  "texte": "Choisissez l'orthographe correcte:",
+  "choix": [
+    "Accueil",
+    "Acceuil",
+    "Aceuil",
+    "Accueuil"
+  ],
+  "reponse_correcte": "Accueil",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 87,
+  "exercise_id": 28,
+  "texte": "Choisissez la bonne orthographe:",
+  "choix": [
+    "Apparemment",
+    "Aparentement",
+    "Apparemment",
+    "Apperemment"
+  ],
+  "reponse_correcte": "Apparemment",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 88,
+  "exercise_id": 28,
+  "texte": "Complétez: Un événement ___ (exceptionnel)",
+  "reponse_correcte": "exceptionnel",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 89,
+  "exercise_id": 28,
+  "texte": "Choisissez l'orthographe correcte:",
+  "choix": [
+    "Recommendation",
+    "Recommandation",
+    "Recomandation",
+    "Recomendation"
+  ],
+  "reponse_correcte": "Recommandation",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 90,
+  "exercise_id": 28,
+  "texte": "Complétez: Un ___ (phénomène) naturel",
+  "reponse_correcte": "phénomène",
+  "format_reponse": "texte_libre"
+},
+
+{
+  "id": 91,
+  "exercise_id": 30,
+  "texte": "Choisissez le synonyme de 'dénouement':",
+  "choix": [
+    "Début",
+    "Climax",
+    "Conclusion",
+    "Péripétie"
+  ],
+  "reponse_correcte": "Conclusion",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 92,
+  "exercise_id": 30,
+  "texte": "Complétez: L'___ (antagoniste) du héros",
+  "reponse_correcte": "antagoniste",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 93,
+  "exercise_id": 30,
+  "texte": "Choisissez le terme pour 'description détaillée':",
+  "choix": [
+    "Portrait",
+    "Paysage",
+    "Dialogue",
+    "Monologue"
+  ],
+  "reponse_correcte": "Portrait",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 94,
+  "exercise_id": 30,
+  "texte": "Complétez: Une ___ (métaphore) filée",
+  "reponse_correcte": "métaphore",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 95,
+  "exercise_id": 30,
+  "texte": "Choisissez l'équivalent de 'oxymore':",
+  "choix": [
+    "Contradiction apparente",
+    "Comparaison",
+    "Exagération",
+    "Personnification"
+  ],
+  "reponse_correcte": "Contradiction apparente",
+  "format_reponse": "choix_multiple"
+},
+
+{
+  "id": 96,
+  "exercise_id": 32,
+  "texte": "Choisissez la forme correcte: 'Il est content que tu ___ (venir)'",
+  "choix": [
+    "sois venu",
+    "es venu",
+    "viens",
+    "viennes"
+  ],
+  "reponse_correcte": "sois venu",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 97,
+  "exercise_id": 32,
+  "texte": "Complétez: Je doute qu'ils ___ (finir) à temps.",
+  "reponse_correcte": "aient fini",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 98,
+  "exercise_id": 32,
+  "texte": "Choisissez la bonne conjugaison:",
+  "choix": [
+    "que nous ayons pris",
+    "que nous avons pris",
+    "que nous prenions",
+    "que nous prenions pris"
+  ],
+  "reponse_correcte": "que nous ayons pris",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 99,
+  "exercise_id": 32,
+  "texte": "Complétez: Il est possible que vous ___ (recevoir) le colis.",
+  "reponse_correcte": "ayez reçu",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 100,
+  "exercise_id": 32,
+  "texte": "Choisissez la phrase correcte:",
+  "choix": [
+    "Je suis heureux que tu sois arrivé",
+    "Je suis heureux que tu es arrivé",
+    "Je suis heureux que tu arrives",
+    "Je suis heureux que tu arrivais"
+  ],
+  "reponse_correcte": "Je suis heureux que tu sois arrivé",
+  "format_reponse": "choix_multiple"
+},
+
+{
+  "id": 101,
+  "exercise_id": 25,
+  "texte": "Complétez: La ___ (concordance) des temps est importante en rédaction.",
+  "reponse_correcte": "concordance",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 102,
+  "exercise_id": 25,
+  "texte": "Choisissez la phrase correcte:",
+  "choix": [
+    "Si j'aurais su, je serais venu",
+    "Si j'avais su, je serais venu",
+    "Si je savais, je viendrais",
+    "Si j'ai su, je viens"
+  ],
+  "reponse_correcte": "Si j'avais su, je serais venu",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 103,
+  "exercise_id": 25,
+  "texte": "Complétez: Il a dit qu'il ___ (venir) si on l'invitait.",
+  "reponse_correcte": "viendrait",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 104,
+  "exercise_id": 25,
+  "texte": "Choisissez la bonne concordance des temps:",
+  "choix": [
+    "Quand je serai grand, je serai médecin",
+    "Quand je serai grand, je suis médecin",
+    "Quand je serai grand, j'étais médecin",
+    "Quand je serai grand, je fus médecin"
+  ],
+  "reponse_correcte": "Quand je serai grand, je serai médecin",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 105,
+  "exercise_id": 25,
+  "texte": "Complétez: Elle promit qu'elle ___ (terminer) son travail le lendemain.",
+  "reponse_correcte": "terminerait",
+  "format_reponse": "texte_libre"
+},
+
+{
+  "id": 106,
+  "exercise_id": 27,
+  "texte": "Choisissez le pluriel correct de 'un après-midi':",
+  "choix": [
+    "des après-midi",
+    "des après-midis",
+    "des après-midits",
+    "des après-midies"
+  ],
+  "reponse_correcte": "des après-midi",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 107,
+  "exercise_id": 27,
+  "texte": "Complétez: Des ___ (gratte-ciel) modernes",
+  "reponse_correcte": "gratte-ciel",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 108,
+  "exercise_id": 27,
+  "texte": "Choisissez le pluriel correct de 'un garde-malade':",
+  "choix": [
+    "des gardes-malades",
+    "des garde-malades",
+    "des garde-malade",
+    "des gardes-malade"
+  ],
+  "reponse_correcte": "des gardes-malades",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 109,
+  "exercise_id": 27,
+  "texte": "Complétez: Des ___ (porte-monnaie) en cuir",
+  "reponse_correcte": "porte-monnaie",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 110,
+  "exercise_id": 27,
+  "texte": "Choisissez la forme correcte:",
+  "choix": [
+    "des grands-pères",
+    "des grand-pères",
+    "des grands-père",
+    "des grand-père"
+  ],
+  "reponse_correcte": "des grands-pères",
+  "format_reponse": "choix_multiple"
+},
+
+{
+  "id": 111,
+  "exercise_id": 29,
+  "texte": "Complétez: Une différence ___ (subtile) entre les deux termes",
+  "reponse_correcte": "subtile",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 112,
+  "exercise_id": 29,
+  "texte": "Choisissez le synonyme le plus précis de 'rapide':",
+  "choix": [
+    "vif",
+    "accéléré",
+    "précipité",
+    "expéditif"
+  ],
+  "reponse_correcte": "vif",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 113,
+  "exercise_id": 29,
+  "texte": "Complétez: Un sentiment ___ (éphémère) de bonheur",
+  "reponse_correcte": "éphémère",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 114,
+  "exercise_id": 29,
+  "texte": "Choisissez le terme qui implique une connotation négative:",
+  "choix": [
+    "avare",
+    "économe",
+    "prudent",
+    "frugal"
+  ],
+  "reponse_correcte": "avare",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 115,
+  "exercise_id": 29,
+  "texte": "Complétez: Une explication ___ (lacunaire) qui manque de détails",
+  "reponse_correcte": "lacunaire",
+  "format_reponse": "texte_libre"
+},
+
+{
+  "id": 116,
+  "exercise_id": 31,
+  "texte": "Choisissez la forme correcte: 'J'___ (aimer) venir plus tôt'",
+  "choix": [
+    "aurais aimé",
+    "aurai aimé",
+    "avais aimé",
+    "aimerais"
+  ],
+  "reponse_correcte": "aurais aimé",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 117,
+  "exercise_id": 31,
+  "texte": "Complétez: Nous ___ (pouvoir) éviter cet accident.",
+  "reponse_correcte": "aurions pu",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 118,
+  "exercise_id": 31,
+  "texte": "Choisissez la phrase correcte:",
+  "choix": [
+    "Tu serais parti plus tôt",
+    "Tu aurais parti plus tôt",
+    "Tu serais partis plus tôt",
+    "Tu aurais partis plus tôt"
+  ],
+  "reponse_correcte": "Tu serais parti plus tôt",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 119,
+  "exercise_id": 31,
+  "texte": "Complétez: Ils ___ (devoir) prévenir avant de venir.",
+  "reponse_correcte": "auraient dû",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 120,
+  "exercise_id": 31,
+  "texte": "Choisissez la forme correcte pour 'elle/venir':",
+  "choix": [
+    "elle serait venue",
+    "elle serait venu",
+    "elle sera venue",
+    "elle viendrait"
+  ],
+  "reponse_correcte": "elle serait venue",
+  "format_reponse": "choix_multiple"
+},
+
+{
+  "id": 121,
+  "exercise_id": 33,
+  "texte": "Complétez: La ___ (déontologie) professionnelle exige la confidentialité.",
+  "reponse_correcte": "déontologie",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 122,
+  "exercise_id": 33,
+  "texte": "Choisissez le terme spécifique à la médecine:",
+  "choix": [
+    "diagnostic",
+    "analyse",
+    "conclusion",
+    "évaluation"
+  ],
+  "reponse_correcte": "diagnostic",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 123,
+  "exercise_id": 34,
+  "texte": "Complétez: Une argumentation ___ (tranchante) qui ne laisse pas de place au doute.",
+  "reponse_correcte": "tranchante",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 124,
+  "exercise_id": 34,
+  "texte": "Choisissez le synonyme de 'cogent':",
+  "choix": [
+    "convaincant",
+    "confus",
+    "complexe",
+    "contradictoire"
+  ],
+  "reponse_correcte": "convaincant",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 125,
+  "exercise_id": 35,
+  "texte": "Complétez: ___ (L'apostrophe) est une figure de style où l'on s'adresse à une personne absente.",
+  "reponse_correcte": "L'apostrophe",
+  "format_reponse": "texte_libre"
+},
+
+{
+  "id": 126,
+  "exercise_id": 36,
+  "texte": "Complétez: Une ___ (dichotomie) évidente entre théorie et pratique",
+  "reponse_correcte": "dichotomie",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 127,
+  "exercise_id": 36,
+  "texte": "Choisissez l'antonyme de 'superficiel':",
+  "choix": [
+    "Profond",
+    "Large",
+    "Étendu",
+    "Vaste"
+  ],
+  "reponse_correcte": "Profond",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 128,
+  "exercise_id": 37,
+  "texte": "Complétez: ___ (L'ellipse) narrative crée un effet de suspense",
+  "reponse_correcte": "L'ellipse",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 129,
+  "exercise_id": 37,
+  "texte": "Choisissez la figure de style dans 'Une mer de troubles':",
+  "choix": [
+    "Métaphore",
+    "Comparaison",
+    "Métonymie",
+    "Hyperbole"
+  ],
+  "reponse_correcte": "Métaphore",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 130,
+  "exercise_id": 38,
+  "texte": "Complétez: Un raisonnement ___ (fallacieux) qui trompe l'auditoire",
+  "reponse_correcte": "fallacieux",
+  "format_reponse": "texte_libre"
+},
+
+{
+  "id": 131,
+  "exercise_id": 39,
+  "texte": "Choisissez la concordance correcte:",
+  "choix": [
+    "Il dit qu'il viendra demain",
+    "Il dit qu'il vient demain",
+    "Il dit qu'il viendrait demain",
+    "Il dit qu'il vienne demain"
+  ],
+  "reponse_correcte": "Il dit qu'il viendra demain",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 132,
+  "exercise_id": 39,
+  "texte": "Complétez: Elle a promis qu'elle ___ (finir) son rapport.",
+  "reponse_correcte": "finirait",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 133,
+  "exercise_id": 39,
+  "texte": "Choisissez la phrase correcte:",
+  "choix": [
+    "Quand il arrivera, nous mangerons",
+    "Quand il arrivera, nous mangeons",
+    "Quand il arrivera, nous mangions",
+    "Quand il arrivera, nous aurons mangé"
+  ],
+  "reponse_correcte": "Quand il arrivera, nous mangerons",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 134,
+  "exercise_id": 39,
+  "texte": "Complétez: Si j'avais su, je ___ (venir) plus tôt.",
+  "reponse_correcte": "serais venu",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 135,
+  "exercise_id": 39,
+  "texte": "Choisissez la concordance correcte pour une action antérieure:",
+  "choix": [
+    "Il a dit qu'il avait terminé",
+    "Il a dit qu'il termine",
+    "Il a dit qu'il terminera",
+    "Il a dit qu'il terminait"
+  ],
+  "reponse_correcte": "Il a dit qu'il avait terminé",
+  "format_reponse": "choix_multiple"
+},
+
+{
+  "id": 136,
+  "exercise_id": 40,
+  "texte": "Complétez: Des ___ (garde-fou) solides",
+  "reponse_correcte": "garde-fou",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 137,
+  "exercise_id": 40,
+  "texte": "Choisissez le pluriel correct de 'un compte-gouttes':",
+  "choix": [
+    "des compte-gouttes",
+    "des comptes-gouttes",
+    "des compte-goutte",
+    "des comptes-goutte"
+  ],
+  "reponse_correcte": "des compte-gouttes",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 138,
+  "exercise_id": 40,
+  "texte": "Complétez: Des ___ (hors-la-loi) dangereux",
+  "reponse_correcte": "hors-la-loi",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 139,
+  "exercise_id": 40,
+  "texte": "Choisissez la forme correcte:",
+  "choix": [
+    "des chefs-d'œuvre",
+    "des chef-d'œuvres",
+    "des chefs-d'œuvres",
+    "des chef-d'œuvre"
+  ],
+  "reponse_correcte": "des chefs-d'œuvre",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 140,
+  "exercise_id": 40,
+  "texte": "Complétez: Des ___ (arc-en-ciel) magnifiques",
+  "reponse_correcte": "arcs-en-ciel",
+  "format_reponse": "texte_libre"
+},
+
+{
+  "id": 141,
+  "exercise_id": 41,
+  "texte": "Choisissez le terme le plus précis pour 'petite quantité':",
+  "choix": [
+    "Nuance",
+    "Infime",
+    "Minime",
+    "Modique"
+  ],
+  "reponse_correcte": "Infime",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 142,
+  "exercise_id": 41,
+  "texte": "Complétez: Une douleur ___ (lancinante) qui persiste",
+  "reponse_correcte": "lancinante",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 143,
+  "exercise_id": 41,
+  "texte": "Choisissez le synonyme de 'péremptoire':",
+  "choix": [
+    "Hésitant",
+    "Catégorique",
+    "Douteux",
+    "Nuancé"
+  ],
+  "reponse_correcte": "Catégorique",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 144,
+  "exercise_id": 41,
+  "texte": "Complétez: Un argument ___ (irréfutable) qui ne peut être contredit",
+  "reponse_correcte": "irréfutable",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 145,
+  "exercise_id": 41,
+  "texte": "Choisissez le terme impliquant une connotation positive:",
+  "choix": [
+    "Obstiné",
+    "Persévérant",
+    "Têtu",
+    "Entêté"
+  ],
+  "reponse_correcte": "Persévérant",
+  "format_reponse": "choix_multiple"
+},
+
+{
+  "id": 146,
+  "exercise_id": 42,
+  "texte": "Complétez: Tu ___ (vouloir) certainement nous aider.",
+  "reponse_correcte": "aurais voulu",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 147,
+  "exercise_id": 42,
+  "texte": "Choisissez la phrase correcte:",
+  "choix": [
+    "Ils seraient partis plus tôt",
+    "Ils auraient partis plus tôt",
+    "Ils seraient parti plus tôt",
+    "Ils auraient parti plus tôt"
+  ],
+  "reponse_correcte": "Ils seraient partis plus tôt",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 148,
+  "exercise_id": 42,
+  "texte": "Complétez: Nous ___ (savoir) répondre à cette question.",
+  "reponse_correcte": "aurions su",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 149,
+  "exercise_id": 42,
+  "texte": "Choisissez la forme correcte:",
+  "choix": [
+    "Elle se serait souvenue",
+    "Elle se serait souvenu",
+    "Elle serait souvenue",
+    "Elle serait souvenu"
+  ],
+  "reponse_correcte": "Elle se serait souvenue",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 150,
+  "exercise_id": 42,
+  "texte": "Complétez: Vous ___ (pouvoir) éviter cet incident.",
+  "reponse_correcte": "auriez pu",
+  "format_reponse": "texte_libre"
+},
+
+{
+  "id": 151,
+  "exercise_id": 43,
+  "texte": "Choisissez la construction correcte du discours indirect:",
+  "choix": [
+    "Il demande si nous venons",
+    "Il demande si nous viendrons",
+    "Il demande si nous venions",
+    "Il demande si nous venez"
+  ],
+  "reponse_correcte": "Il demande si nous venons",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 152,
+  "exercise_id": 43,
+  "texte": "Complétez: 'Où est-il?' → Elle s'est demandé où ___",
+  "reponse_correcte": "il était",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 153,
+  "exercise_id": 44,
+  "texte": "Choisissez l'orthographe correcte:",
+  "choix": [
+    "Différend",
+    "Différent",
+    "Différend",
+    "Différant"
+  ],
+  "reponse_correcte": "Différend",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 154,
+  "exercise_id": 44,
+  "texte": "Complétez: Une ___ (acrimonie) dans le débat",
+  "reponse_correcte": "acrimonie",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 155,
+  "exercise_id": 45,
+  "texte": "Choisissez le terme littéraire pour 'dénouement':",
+  "choix": [
+    "Exposition",
+    "Climax",
+    "Catastrophe",
+    "Épilogue"
+  ],
+  "reponse_correcte": "Catastrophe",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 156,
+  "exercise_id": 45,
+  "texte": "Complétez: Le ___ (protagoniste) de l'histoire",
+  "reponse_correcte": "protagoniste",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 157,
+  "exercise_id": 46,
+  "texte": "Choisissez la conjugaison correcte: 'Il est dommage que tu ___ (partir)'",
+  "choix": [
+    "sois parti",
+    "es parti",
+    "seras parti",
+    "partes"
+  ],
+  "reponse_correcte": "sois parti",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 158,
+  "exercise_id": 46,
+  "texte": "Complétez: Je regrette qu'ils ne ___ (venir) pas.",
+  "reponse_correcte": "soient venus",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 159,
+  "exercise_id": 47,
+  "texte": "Choisissez le pluriel correct:",
+  "choix": [
+    "Des mea-culpa",
+    "Des mea-culpas",
+    "Des meæ-culpæ",
+    "Des mea culpa"
+  ],
+  "reponse_correcte": "Des mea-culpa",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 160,
+  "exercise_id": 47,
+  "texte": "Complétez: Des ___ (alter ego) fidèles",
+  "reponse_correcte": "alter ego",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 161,
+  "exercise_id": 48,
+  "texte": "Choisissez la phrase correcte:",
+  "choix": [
+    "Nous aurions dû anticiper",
+    "Nous aurions du anticiper",
+    "Nous aurions dûs anticiper",
+    "Nous aurions due anticiper"
+  ],
+  "reponse_correcte": "Nous aurions dû anticiper",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 162,
+  "exercise_id": 48,
+  "texte": "Complétez: Vous ___ (devoir) nous prévenir plus tôt.",
+  "reponse_correcte": "auriez dû",
+  "format_reponse": "texte_libre"
+},
+
+{
+  "id": 163,
+  "exercise_id": 33,
+  "texte": "Complétez: Un raisonnement ___ (syllogistique) en trois parties",
+  "reponse_correcte": "syllogistique",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 164,
+  "exercise_id": 33,
+  "texte": "Choisissez l'équivalent de 'paralogisme':",
+  "choix": [
+    "Raisonnement valide",
+    "Sophisme involontaire",
+    "Démonstration rigoureuse",
+    "Argumentation persuasive"
+  ],
+  "reponse_correcte": "Sophisme involontaire",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 165,
+  "exercise_id": 34,
+  "texte": "Complétez: Une réfutation ___ (cinglante) des arguments adverses",
+  "reponse_correcte": "cinglante",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 166,
+  "exercise_id": 34,
+  "texte": "Choisissez le terme pour 'raisonnement circulaire':",
+  "choix": [
+    "Pétition de principe",
+    "Argument d'autorité",
+    "Fausse dichotomie",
+    "Homme de paille"
+  ],
+  "reponse_correcte": "Pétition de principe",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 167,
+  "exercise_id": 35,
+  "texte": "Complétez: ___ (L'antithèse) met en opposition deux idées contraires",
+  "reponse_correcte": "L'antithèse",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 168,
+  "exercise_id": 35,
+  "texte": "Choisissez la figure de style dans 'Les vagues mugissaient':",
+  "choix": [
+    "Personnification",
+    "Métaphore",
+    "Comparaison",
+    "Métonymie"
+  ],
+  "reponse_correcte": "Personnification",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 169,
+  "exercise_id": 36,
+  "texte": "Complétez: Une analyse ___ (tranchée) du problème",
+  "reponse_correcte": "tranchée",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 170,
+  "exercise_id": 36,
+  "texte": "Choisissez l'antonyme de 'consensuel':",
+  "choix": [
+    "Unanime",
+    "Conflictuel",
+    "Conciliant",
+    "Diplomatique"
+  ],
+  "reponse_correcte": "Conflictuel",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 171,
+  "exercise_id": 37,
+  "texte": "Complétez: ___ (L'anacoluthe) brise la construction syntaxique",
+  "reponse_correcte": "L'anacoluthe",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 172,
+  "exercise_id": 37,
+  "texte": "Choisissez la figure de style dans 'Je meurs de soif':",
+  "choix": [
+    "Hyperbole",
+    "Litote",
+    "Euphémisme",
+    "Oxymore"
+  ],
+  "reponse_correcte": "Hyperbole",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 173,
+  "exercise_id": 38,
+  "texte": "Complétez: Un discours ___ (captieux) qui égare l'auditeur",
+  "reponse_correcte": "captieux",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 174,
+  "exercise_id": 38,
+  "texte": "Choisissez le synonyme de 'fallacieux':",
+  "choix": [
+    "Véridique",
+    "Trompeur",
+    "Authentique",
+    "Sincère"
+  ],
+  "reponse_correcte": "Trompeur",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 175,
+  "exercise_id": 39,
+  "texte": "Complétez: Si tu ___ (étudier) plus, tu aurais réussi.",
+  "reponse_correcte": "avais étudié",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 176,
+  "exercise_id": 39,
+  "texte": "Choisissez la concordance correcte:",
+  "choix": [
+    "Il pense qu'il viendra demain",
+    "Il pense qu'il viendrait demain",
+    "Il pense qu'il vienne demain",
+    "Il pense qu'il venait demain"
+  ],
+  "reponse_correcte": "Il pense qu'il viendra demain",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 177,
+  "exercise_id": 40,
+  "texte": "Complétez: Des ___ (prie-dieu) anciens",
+  "reponse_correcte": "prie-dieu",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 178,
+  "exercise_id": 40,
+  "texte": "Choisissez le pluriel correct de 'un sans-abri':",
+  "choix": [
+    "des sans-abris",
+    "des sanss-abri",
+    "des sans-abri",
+    "des sanss-abris"
+  ],
+  "reponse_correcte": "des sans-abri",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 179,
+  "exercise_id": 41,
+  "texte": "Complétez: Une sensation ___ (ténue) de déjà-vu",
+  "reponse_correcte": "ténue",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 180,
+  "exercise_id": 41,
+  "texte": "Choisissez le terme pour 'qui ne peut être apaisé':",
+  "choix": [
+    "Inexorable",
+    "Implacable",
+    "Insatiable",
+    "Inaltérable"
+  ],
+  "reponse_correcte": "Implacable",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 181,
+  "exercise_id": 42,
+  "texte": "Complétez: Ils ___ (faire) mieux de se taire.",
+  "reponse_correcte": "auraient fait",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 182,
+  "exercise_id": 42,
+  "texte": "Choisissez la phrase correcte:",
+  "choix": [
+    "Elle aurait pu réussir",
+    "Elle aurait pue réussir",
+    "Elle aurait peut réussir",
+    "Elle aurais pu réussir"
+  ],
+  "reponse_correcte": "Elle aurait pu réussir",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 183,
+  "exercise_id": 43,
+  "texte": "Complétez: 'Peux-tu venir?' → Il m'a demandé si ___",
+  "reponse_correcte": "je pouvais venir",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 184,
+  "exercise_id": 43,
+  "texte": "Choisissez la transformation correcte: 'Je suis fatigué' → Il a dit ___",
+  "choix": [
+    "qu'il était fatigué",
+    "qu'il est fatigué",
+    "qu'il sera fatigué",
+    "qu'il serait fatigué"
+  ],
+  "reponse_correcte": "qu'il était fatigué",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 185,
+  "exercise_id": 44,
+  "texte": "Complétez: Une ___ (diatribe) enflammée contre le système",
+  "reponse_correcte": "diatribe",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 186,
+  "exercise_id": 44,
+  "texte": "Choisissez l'orthographe correcte:",
+  "choix": [
+    "Acrimonie",
+    "Acrimone",
+    "Acrymonie",
+    "Acrimony"
+  ],
+  "reponse_correcte": "Acrimonie",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 187,
+  "exercise_id": 45,
+  "texte": "Complétez: Le ___ (dénouement) de l'intrigue",
+  "reponse_correcte": "dénouement",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 188,
+  "exercise_id": 45,
+  "texte": "Choisissez le terme pour 'scène de reconnaissance':",
+  "choix": [
+    "Anagnorisis",
+    "Péripétie",
+    "Catharsis",
+    "Dénouement"
+  ],
+  "reponse_correcte": "Anagnorisis",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 189,
+  "exercise_id": 46,
+  "texte": "Complétez: Il est essentiel que vous ___ (être) présent.",
+  "reponse_correcte": "soyez",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 190,
+  "exercise_id": 46,
+  "texte": "Choisissez la forme correcte:",
+  "choix": [
+    "Bien qu'il ait plu",
+    "Bien qu'il a plu",
+    "Bien qu'il avait plu",
+    "Bien qu'il aurait plu"
+  ],
+  "reponse_correcte": "Bien qu'il ait plu",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 191,
+  "exercise_id": 47,
+  "texte": "Complétez: Des ___ (nota bene) importants",
+  "reponse_correcte": "nota bene",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 192,
+  "exercise_id": 47,
+  "texte": "Choisissez le pluriel correct de 'un post-scriptum':",
+  "choix": [
+    "des post-scriptums",
+    "des post-scripta",
+    "des posts-scriptum",
+    "des post-scriptum"
+  ],
+  "reponse_correcte": "des post-scriptum",
+  "format_reponse": "choix_multiple"
+},
+{
+  "id": 193,
+  "exercise_id": 48,
+  "texte": "Complétez: Nous ___ (savoir) vous conseiller.",
+  "reponse_correcte": "aurions su",
+  "format_reponse": "texte_libre"
+},
+{
+  "id": 194,
+  "exercise_id": 48,
+  "texte": "Choisissez la phrase correcte:",
+  "choix": [
+    "Vous auriez dû prévenir",
+    "Vous auriez du prévenir",
+    "Vous auriez dûs prévenir",
+    "Vous auriez due prévenir"
+  ],
+  "reponse_correcte": "Vous auriez dû prévenir",
+  "format_reponse": "choix_multiple"
 }
+]
+
+}
+
+  
+
+
+
+

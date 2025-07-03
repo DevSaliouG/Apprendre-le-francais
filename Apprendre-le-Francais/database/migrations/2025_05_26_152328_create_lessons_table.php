@@ -21,7 +21,7 @@ return new class extends Migration
             
             $table->string('title', 255); // Titre de la leçon avec limite de longueur
             $table->text('content'); // Contenu détaillé de la leçon
-            
+
             $table->timestamps(); // created_at et updated_at
             
             // Index pour optimiser les requêtes par niveau

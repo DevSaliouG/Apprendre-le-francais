@@ -57,6 +57,7 @@ public function index()
         'exercises',
         'progress',
         'completionStatus',
+        'user'
         
     ));
 }

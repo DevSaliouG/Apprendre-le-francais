@@ -13,7 +13,7 @@ class StreakDanger extends Notification
     {
         return [
             'title' => 'Votre streak est en danger !',
-            'message' => 'Vous avez manqué une journée hier. Revenez aujourd\'hui pour sauver votre streak !',
+            'message' => 'Vous avez manqué une journée hier. Revenez aujourd\'hui pour sauver votre serie !',
             'icon' => 'fa-exclamation-triangle'
         ];
     }

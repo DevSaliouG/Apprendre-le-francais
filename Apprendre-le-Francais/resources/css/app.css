@@ -1,6 +1,6 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 @import '@fortawesome/fontawesome-free/css/all.min.css';
-
+@import "@fortawesome/fontawesome-free/css/all.min.css";
  
         :root {
             --primary: #6C63FF;
@@ -106,6 +106,7 @@
             color: white;
             box-shadow: 0 4px 12px rgba(108, 99, 255, 0.25);
         }
+        
 
         .user-avatar {
             width: 40px;
@@ -398,7 +399,7 @@
             height: 100%;
             width: 30%;
             background: linear-gradient(90deg, var(--primary), var(--tertiary));
-            animation: progress 2s infinite linear;
+            animation: progress 0.3s linear;
         }
 
         @keyframes progress {

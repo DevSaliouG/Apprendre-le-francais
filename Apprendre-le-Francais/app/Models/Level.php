@@ -21,6 +21,35 @@ class Level extends Model
     /**
      * Relation avec les leçons de ce niveau
      */
+
+    public static function assignLevelAfterTest(User $user, int $score)
+    {
+        // Définir les plages de score pour chaque niveau
+        $levelRanges = [
+            'Débutant' => [0, 40],
+            'Intermédiaire' => [41, 100]
+           
+        ];
+        
+        $assignedLevel = null;
+        
+        foreach ($levelRanges as $levelName => $range) {
+            if ($score >= $range[0] && $score <= $range[1]) {
+                $assignedLevel = Level::where('name', $levelName)->first();
+                break;
+            }
+        }
+        
+        // Si aucun niveau n'a été trouvé, utiliser le niveau par défaut
+        if (!$assignedLevel) {
+            $assignedLevel = Level::defaultLevel();
+        }
+        
+        $user->update(['level_id' => $assignedLevel->id]);
+        
+        return $assignedLevel;
+    }
+
     public function lessons()
     {
         return $this->hasMany(Lesson::class);

@@ -20,6 +20,7 @@
                                 <div>
                                     <h5>{{ $lesson->title }}</h5>
                                     <p class="mb-0">
+                                        <span class="badge bg-primary me-2">{{ ucfirst($lesson->type) }}</span>
                                         Exercices: {{ $lesson->exercises->count() }}
                                         ({{ $lesson->exercises->sum('questions_count') }} questions)
                                     </p>

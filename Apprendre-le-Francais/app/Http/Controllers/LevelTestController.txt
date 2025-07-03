@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Question;  
 use App\Models\UserResult;  
-use App\Models\Level;
-use App\Models\User;
+use App\Models\Level;  
 use Illuminate\Http\Request;  
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -83,82 +82,17 @@ class LevelTestController extends Controller
     }
 
     // Génère les questions pour le test
-public function generateQuestions(User $user, $testType, $count)
-{
-    // Récupérer les IDs des niveaux "Débutant" et "Intermédiaire"
-    $allowedLevels = Level::whereIn('name', ['Débutant', 'Intermédiaire'])
-                          ->pluck('id')
-                          ->toArray();
-    
-    // Vérifier si on a bien les niveaux nécessaires
-    if (empty($allowedLevels)) {
-        // Créer les niveaux s'ils n'existent pas
-        $beginnerLevel = Level::firstOrCreate(
-            ['name' => 'Débutant'],
-            ['description' => 'Niveau débutant', 'order' => 1]
-        );
-        
-        $intermediateLevel = Level::firstOrCreate(
-            ['name' => 'Intermédiaire'],
-            ['description' => 'Niveau intermédiaire', 'order' => 2]
-        );
-        
-        $allowedLevels = [$beginnerLevel->id, $intermediateLevel->id];
+    protected function generateTestQuestions()
+    {
+        return Question::with('exercise')
+            ->whereHas('exercise', function($query) {  
+                $query->whereIn('type', ['écrit', 'oral']);  
+            })
+            ->inRandomOrder()
+            ->limit(10) // Augmenté pour une meilleure évaluation
+            ->pluck('id')
+            ->toArray();
     }
-    
-    // Générer 5 questions écrites
-    $writtenQuestions = Question::whereIn('level_id', $allowedLevels)
-                                ->where('type', 'écrit')
-                                ->inRandomOrder()
-                                ->limit(5)
-                                ->get();
-    
-    // Générer 5 questions orales
-    $oralQuestions = Question::whereIn('level_id', $allowedLevels)
-                             ->where('type', 'oral')
-                             ->inRandomOrder()
-                             ->limit(5)
-                             ->get();
-    
-    // Combiner les deux types de questions
-    $questions = $writtenQuestions->merge($oralQuestions);
-    
-    // Vérifier s'il y a suffisamment de questions
-    if ($questions->count() < 10) {
-        $needed = 10 - $questions->count();
-        
-        // Compléter avec des questions de niveau débutant
-        $fallbackLevel = Level::where('name', 'Débutant')->first();
-        
-        // Déterminer quel type est manquant
-        $writtenCount = $writtenQuestions->count();
-        $oralCount = $oralQuestions->count();
-        
-        if ($writtenCount < 5) {
-            $additionalWritten = Question::where('level_id', $fallbackLevel->id)
-                                         ->where('type', 'écrit')
-                                         ->whereNotIn('id', $questions->pluck('id'))
-                                         ->inRandomOrder()
-                                         ->limit($needed)
-                                         ->get();
-            
-            $questions = $questions->merge($additionalWritten);
-        }
-        
-        if ($oralCount < 5) {
-            $additionalOral = Question::where('level_id', $fallbackLevel->id)
-                                      ->where('type', 'oral')
-                                      ->whereNotIn('id', $questions->pluck('id'))
-                                      ->inRandomOrder()
-                                      ->limit($needed)
-                                      ->get();
-            
-            $questions = $questions->merge($additionalOral);
-        }
-    }
-    
-    return $questions->shuffle(); // Mélanger les questions pour varier l'ordre
-}
 
     // Vérifie la réponse
     protected function checkAnswer($userAnswer, Question $question)
@@ -192,7 +126,7 @@ public function generateQuestions(User $user, $testType, $count)
         $percentage <= 30 => Level::where('code', 'D')->first(),  
         $percentage <= 60 => Level::where('code', 'I')->first(),  
         $percentage <= 80 => Level::where('code', 'I')->first(),
-        default => Level::where('code', 'D')->first(),  
+        default => Level::where('code', 'B2')->first(),  
     };
 
     // Mise à jour du niveau utilisateur
@@ -205,17 +139,10 @@ public function generateQuestions(User $user, $testType, $count)
     // Régénérer la session pour éviter les conflits
     session()->regenerate();
 
-    // Ajoutez ces données pour la vue intermédiaire
-    $testResults = [
-        'score' => $score,
-        'total' => $totalQuestions,
-        'percentage' => round($percentage),
-        'level' => $level,
-        'redirectUrl' => route('dashboard'),
-        'delay' => 5 // Délai en secondes avant redirection
-    ];
-
-    return view('user.test-results', $testResults);
+    return redirect()->route('dashboard')->with([
+        'success' => 'Votre niveau a été évalué à '.$level->name,
+        'level' => $level
+    ]);  
 }
    public function __construct()
 {

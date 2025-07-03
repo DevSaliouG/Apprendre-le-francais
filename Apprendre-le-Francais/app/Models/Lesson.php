@@ -9,10 +9,22 @@ class Lesson extends Model
 {
     use HasFactory;
 
+     const TYPES = [
+        'grammaire',
+        'orthographe',
+        'vocabulaire',
+        'conjugaison'
+    ];
+
      protected $fillable = [
         'level_id',
         'title',
-        'content'
+        'content',
+        'type'
+    ];
+
+     protected $casts = [
+        'type' => 'string',
     ];
 
     /**
