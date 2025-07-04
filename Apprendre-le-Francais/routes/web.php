@@ -167,3 +167,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
         ->shallow()
         ->except(['destroy']);
 });
+
+ Route::delete('exercises/{exercise}', [ExerciseAdminController::class, 'destroy'])
+    ->name('admin.exercises.destroy');

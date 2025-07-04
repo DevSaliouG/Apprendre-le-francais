@@ -11,7 +11,7 @@ class UpdateQuestionRequest extends FormRequest
         return true;
     }
 
-    public function rules()
+    /*  public function rules()
     {
         $question = $this->route('question');
         
@@ -19,7 +19,7 @@ class UpdateQuestionRequest extends FormRequest
             'texte' => 'required|string|max:255',
             'choix' => 'required|array|min:2',
             'choix.*' => 'required|string|max:255',
-            'reponse_correcte' => 'required|integer|min:0|max:3', // 0-3 pour les 4 options
+            'reponse_correcte' => 'required|integer|min:0|max:4', // 0-3 pour les 4 options
             'fichier_audio' => [
                 'nullable',
                 'file',
@@ -32,6 +32,29 @@ class UpdateQuestionRequest extends FormRequest
                 },
             ],
         ];
+    } */
+
+    public function rules()
+    {
+        $question = $this->route('question');
+        $newFormat = $this->input('format_reponse', $question->format_reponse);
+
+        $rules = [
+            'texte' => 'required|string|max:255',
+            'format_reponse' => 'required|in:choix_multiple,texte_libre,audio',
+            'fichier_audio' => 'nullable|file|mimes:mp3,wav|max:2048',
+        ];
+
+        // Règles conditionnelles
+        if ($newFormat === 'choix_multiple') {
+            $rules['choix'] = 'required|array|min:2';
+            $rules['choix.*'] = 'required|string|max:255';
+            $rules['reponse_correcte'] = 'required|integer|min:0|max:3';
+        } else {
+            $rules['reponse_correcte'] = 'required|string|max:255';
+        }
+
+        return $rules;
     }
 
     public function messages()

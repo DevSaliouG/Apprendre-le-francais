@@ -29,18 +29,6 @@ class UpdateExerciseRequest extends FormRequest
             'lesson_id' => 'required|exists:lessons,id',
             'type' => ['required', Rule::in(['écrit', 'oral'])],
             'difficulty' => 'required|integer|min:1|max:5',
-            'audio_path' => [
-                'nullable',
-                'file',
-                'mimes:mp3,wav',
-                'max:2048', // 2MB
-                function ($attribute, $value, $fail) use ($exercise) {
-                    // Vérifie que le fichier audio n'est requis que pour les exercices oraux
-                    if ($this->input('type') === 'oral' && !$value && !$exercise->audio_path) {
-                        $fail('Un fichier audio est requis pour les exercices oraux.');
-                    }
-                },
-            ],
         ];
     }
 
@@ -60,9 +48,6 @@ class UpdateExerciseRequest extends FormRequest
             'difficulty.integer' => 'La difficulté doit être un nombre entier.',
             'difficulty.min' => 'La difficulté doit être au moins 1.',
             'difficulty.max' => 'La difficulté ne peut pas dépasser 5.',
-            'audio_path.file' => 'Le fichier audio doit être un fichier valide.',
-            'audio_path.mimes' => 'Le fichier audio doit être au format MP3 ou WAV.',
-            'audio_path.max' => 'Le fichier audio ne doit pas dépasser 2 Mo.',
         ];
     }
 

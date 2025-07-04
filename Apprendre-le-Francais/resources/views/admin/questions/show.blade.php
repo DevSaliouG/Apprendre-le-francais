@@ -1,48 +1,86 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto px-4">
-    <h1 class="text-2xl font-bold my-4">Détails de la question #{{ $question->id }}</h1>
-    
-    <div class="bg-white rounded shadow p-6 mb-6">
-        <h2 class="text-xl font-semibold mb-4">Exercice parent: #{{ $question->exercise_id }}</h2>
-        
-        <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2">Question:</label>
-            <p class="text-gray-800">{{ $question->texte }}</p>
+<div class="container">
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white border-bottom-0 py-3">
+            <h1 class="h2 fw-bold mb-0">Détails de la question #{{ $question->id }}</h1>
         </div>
-        
-        <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2">Options:</label>
-            <ul class="list-disc pl-6">
-                @foreach($question->clean_choix as $index => $option)
-                <li class="mb-1">
-                    {{ $option }}
-                    @if($index == $question->reponse_correcte)
-                    <span class="text-green-600 font-bold">(Réponse correcte)</span>
-                    @endif
-                </li>
-                @endforeach
-            </ul>
-        </div>
-        
-        @if($question->fichier_audio)
-        <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2">Fichier audio:</label>
-            <audio controls class="mt-2">
-                <source src="{{ Storage::url($question->fichier_audio) }}" type="audio/mpeg">
-            </audio>
-        </div>
-        @endif
     </div>
     
-    <div class="flex items-center gap-4">
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <div class="mb-4">
+                <label class="form-label fw-bold">Exercice parent:</label>
+                <p class="mb-0">#{{ $question->exercise_id }}</p>
+            </div>
+            
+            <div class="mb-4">
+                <label class="form-label fw-bold">Format de réponse:</label>
+                <p class="mb-0">
+                    @if($question->format_reponse === 'choix_multiple')
+                        Choix multiple
+                    @elseif($question->format_reponse === 'texte_libre')
+                        Texte libre
+                    @else
+                        Réponse audio
+                    @endif
+                </p>
+            </div>
+            
+            <div class="mb-4">
+                <label class="form-label fw-bold">Question:</label>
+                <p class="mb-0">{{ $question->texte }}</p>
+            </div>
+            
+            @if($question->format_reponse === 'choix_multiple')
+            <div class="mb-4">
+                <label class="form-label fw-bold">Options:</label>
+                <ul class="list-group">
+                    @foreach($question->clean_choix as $index => $option)
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{ $option }}
+                        @if($index == $question->reponse_correcte)
+                        <span class="badge bg-success">Réponse correcte</span>
+                        @endif
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+            @else
+            <div class="mb-4">
+                <label class="form-label fw-bold">Réponse correcte:</label>
+                <p class="mb-0">{{ $question->reponse_correcte }}</p>
+            </div>
+            @endif
+            
+            @if($question->fichier_audio)
+            <div class="mb-4">
+                <label class="form-label fw-bold">Fichier audio:</label>
+                <div class="mt-2">
+                    <audio controls class="w-100">
+                        <source src="{{ Storage::url($question->fichier_audio) }}" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            @endif
+        </div>
+    </div>
+    
+    <div class="d-flex gap-2">
         <a href="{{ route('admin.questions.edit', $question) }}" class="btn btn-warning">
             Modifier
         </a>
         <a href="{{ route('admin.exercises.show', $question->exercise) }}" class="btn btn-secondary">
             Retour à l'exercice
         </a>
+         <form action="{{ route('admin.questions.destroy', $question) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette question?')">
+            <i class="fas fa-trash me-1"></i> Supprimer
+        </button>
+    </form>
     </div>
 </div>
 @endsection

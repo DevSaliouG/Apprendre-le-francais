@@ -10,11 +10,31 @@ use Illuminate\Http\Request;
 
 class LessonAdminController extends Controller
 {
-    public function index()
-    {
-        $lessons = Lesson::with('level')->paginate(10);
-        return view('admin.lessons.index', compact('lessons'));
+public function index(Request $request)
+{
+    $query = Lesson::query()->with('level');
+
+    // Recherche par titre
+    if ($request->has('search')) {
+        $search = $request->input('search');
+        $query->where('title', 'like', "%{$search}%");
     }
+
+    // Filtre par niveau
+    if ($request->has('level')) {
+        $query->where('level_id', $request->input('level'));
+    }
+
+    // Filtre par type
+    if ($request->has('type')) {
+        $query->where('type', $request->input('type'));
+    }
+
+    $lessons = $query->orderByDesc('id')->paginate(10);
+    $levels = Level::all(); // Pour le filtre des niveaux
+
+    return view('admin.lessons.index', compact('lessons', 'levels'));
+}
 
     public function create()
     {

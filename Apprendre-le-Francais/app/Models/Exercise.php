@@ -53,11 +53,22 @@ class Exercise extends Model
     // Supprime le fichier audio lors de la suppression de l'exercice
     protected static function booted()
     {
-        static::deleting(function ($exercise) {
-            if ($exercise->audio_path) {
-                Storage::disk('public')->delete($exercise->audio_path);
+       static::deleting(function ($exercise) {
+        // Supprimer les fichiers audio des questions
+        foreach ($exercise->questions as $question) {
+            if ($question->fichier_audio) {
+                Storage::disk('public')->delete($question->fichier_audio);
             }
-        });
+        }
+        
+        // Supprimer les questions
+        $exercise->questions()->delete();
+        
+        // Supprimer le fichier audio de l'exercice
+        if ($exercise->audio_path) {
+            Storage::disk('public')->delete($exercise->audio_path);
+        }
+    });
     }
     public function questionsRandomized()
     {
@@ -112,6 +123,14 @@ public function userProgress(User $user)
     
     return round(($correctAnswers / $totalQuestions) * 100);
 }
-
+    public static function getForFilter()
+{
+    return Exercise::with('lesson')
+        ->get()
+        ->mapWithKeys(function ($exercise) {
+            return [$exercise->id => "Leçon {$exercise->lesson->id} - Exercice {$exercise->id}"];
+        });
+}
+    
 }
 

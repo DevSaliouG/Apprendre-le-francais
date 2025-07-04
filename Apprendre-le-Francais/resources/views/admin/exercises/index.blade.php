@@ -3,259 +3,148 @@
 @section('title', 'Gestion des Exercices')
 
 @section('content')
-<div class="container mx-auto px-4 py-8">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
+<div class="container py-5">
+    <!-- En-tête -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 gap-3">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800 mb-2">Gestion des exercices</h1>
-            <p class="text-gray-600">Liste complète des exercices disponibles</p>
+            <h1 class="h3 fw-bold text-primary mb-1">Gestion des exercices</h1>
+            <p class="text-muted mb-0">Liste complète des exercices disponibles</p>
         </div>
-        <a href="{{ route('admin.exercises.create') }}" 
-           class="btn-primary flex items-center self-start md:self-auto px-4 py-2 rounded-full transition-all">
-            <i class="fas fa-plus mr-2"></i> Nouvel exercice
+        <a href="{{ route('admin.exercises.create') }}" class="btn btn-primary">
+            <i class="fas fa-plus me-2"></i> Nouvel exercice
         </a>
     </div>
 
-    <div class="card">
-        <div class="card-body p-0">
-            <div class="overflow-x-auto">
-                <table class="min-w-full text-left">
-                    <thead class="bg-gray-50">
+    <!-- Filtres -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <form method="GET" action="{{ route('admin.exercises.index') }}" class="row g-3">
+                <div class="col-md-4">
+                    <input type="text" name="search" class="form-control" placeholder="Rechercher par leçon..."
+                        value="{{ request('search') }}">
+                </div>
+
+                <div class="col-md-2">
+                    <select name="lesson_id" class="form-select">
+                        <option value="">Toutes les leçons</option>
+                        @foreach ($lessons as $id => $title)
+                            <option value="{{ $id }}" {{ request('lesson_id') == $id ? 'selected' : '' }}>{{ $title }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <select name="type" class="form-select">
+                        <option value="">Tous les types</option>
+                        <option value="choix_multiple" {{ request('type') === 'choix_multiple' ? 'selected' : '' }}>Choix multiple</option>
+                        <option value="texte_libre" {{ request('type') === 'texte_libre' ? 'selected' : '' }}>Texte libre</option>
+                        <option value="vrai_faux" {{ request('type') === 'vrai_faux' ? 'selected' : '' }}>Vrai/Faux</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-outline-primary w-100">
+                        <i class="fas fa-filter me-1"></i> Filtrer
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tableau -->
+    <div class="card shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Leçon</th>
+                        <th>Niveau</th>
+                        <th>Type</th>
+                        <th>Difficulté</th>
+                        <th>Créé le</th>
+                        <th class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse ($exercises as $exercise)
                         <tr>
-                            <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
-                            <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Titre</th>
-                            <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Leçon</th>
-                            <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Niveau</th>
-                            <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
-                            <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Difficulté</th>
-                            <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Créé le</th>
-                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
-                        @foreach($exercises as $exercise)
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <!-- ID -->
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                #{{ $exercise->id }}
-                            </td>
-                            <!-- Titre de l'exercice -->
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-800">{{ $exercise->title }}</div>
-                            </td>
-                            <!-- Leçon -->
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-800">{{ $exercise->lesson->title }}</div>
-                            </td>
-                            <!-- Niveau de la leçon -->
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                @if($exercise->lesson->level)
-                                    <span class="px-2 inline-flex text-xs font-semibold leading-5 rounded-full bg-gray-100 text-gray-800">
-                                        {{ strtoupper($exercise->lesson->level->name) }}
-                                    </span>
+                            <td>#{{ $exercise->id }}</td>
+                            <td>{{ $exercise->lesson->title }}</td>
+                            <td>
+                                @if ($exercise->lesson->level)
+                                    <span class="badge bg-secondary text-uppercase">{{ $exercise->lesson->level->name }}</span>
                                 @endif
                             </td>
-                            <!-- Type -->
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="px-3 py-1 inline-flex text-sm font-medium rounded-full
-                                    {{ $exercise->type === 'choix_multiple' ? 'bg-blue-100 text-blue-800' : '' }}
-                                    {{ $exercise->type === 'texte_libre' ? 'bg-green-100 text-green-800' : '' }}
-                                    {{ $exercise->type === 'vrai_faux' ? 'bg-yellow-100 text-yellow-800' : '' }}">
+                            <td>
+                                <span class="badge
+                                    {{ $exercise->type === 'écrit' ? 'bg-primary' : '' }}
+                                    {{ $exercise->type === 'oral' ? 'bg-success' : '' }}">
                                     {{ str_replace('_', ' ', ucfirst($exercise->type)) }}
                                 </span>
                             </td>
-                            <!-- Difficulté -->
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    @for($i = 0; $i < $exercise->difficulty; $i++)
-                                        <i class="fas fa-star text-sm text-yellow-500"></i>
-                                    @endfor
-                                    @for($i = $exercise->difficulty; $i < 5; $i++)
-                                        <i class="far fa-star text-sm text-gray-300"></i>
-                                    @endfor
-                                </div>
+                            <td>
+                                @for ($i = 0; $i < $exercise->difficulty; $i++)
+                                    <i class="fas fa-star text-warning"></i>
+                                @endfor
+                                @for ($i = $exercise->difficulty; $i < 5; $i++)
+                                    <i class="far fa-star text-muted"></i>
+                                @endfor
                             </td>
-                            <!-- Créé le -->
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                                {{ $exercise->created_at->format('d/m/Y') }}
-                            </td>
-                            <!-- Actions -->
-                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <div class="flex justify-end space-x-2">
-                                    <a href="{{ route('admin.exercises.show', $exercise) }}" 
-                                       class="btn-view flex items-center px-3 py-1 rounded-full transition-all">
-                                        <i class="fas fa-eye mr-1"></i>
+                            <td>{{ $exercise->created_at->format('d/m/Y') }}</td>
+                            <td class="text-end">
+                                <div class="btn-group" role="group">
+                                    <a href="{{ route('admin.exercises.show', $exercise) }}" class="btn btn-outline-info btn-sm" title="Voir">
+                                        <i class="fas fa-eye"></i>
                                     </a>
-                                    <a href="{{ route('admin.exercises.edit', $exercise) }}" 
-                                       class="btn-edit flex items-center px-3 py-1 rounded-full transition-all">
-                                        <i class="fas fa-edit mr-1"></i>
+                                    <a href="{{ route('admin.exercises.edit', $exercise) }}" class="btn btn-outline-warning btn-sm" title="Modifier">
+                                        <i class="fas fa-edit"></i>
                                     </a>
+                                    <form action="{{ route('admin.exercises.destroy', $exercise) }}" method="POST" onsubmit="return confirm('Supprimer cet exercice ?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-outline-danger btn-sm" title="Supprimer">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </div>
                             </td>
                         </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="px-6 py-4 border-t border-gray-200">
-                @if ($exercises->hasPages())
-                    {{ $exercises->onEachSide(1)->links('pagination::bootstrap-5') }}
-                @endif
-            </div>
+                    @empty
+                        <tr>
+                            <td colspan="7" class="text-center text-muted py-4">Aucun exercice trouvé.</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
         </div>
+
+                   <div class="d-flex justify-content-center mt-5">
+                <ul class="pagination shadow-sm rounded-pill">
+                    {{-- Lien précédent --}}
+                    @if ($exercises ->onFirstPage())
+                        <li class="page-item disabled"><span class="page-link rounded-pill">&laquo;</span></li>
+                    @else
+                        <li class="page-item"><a class="page-link rounded-pill"
+                                href="{{ $exercises->previousPageUrl() }}">&laquo;</a></li>
+                    @endif
+
+                    {{-- Pages --}}
+                    @foreach ($exercises->getUrlRange(1, $exercises->lastPage()) as $page => $url)
+                        <li class="page-item {{ $exercises->currentPage() === $page ? 'active' : '' }}">
+                            <a class="page-link rounded-pill" href="{{ $url }}">{{ $page }}</a>
+                        </li>
+                    @endforeach
+
+                    {{-- Lien suivant --}}
+                    @if ($exercises->hasMorePages())
+                        <li class="page-item"><a class="page-link rounded-pill"
+                                href="{{ $exercises->nextPageUrl() }}">&raquo;</a></li>
+                    @else
+                        <li class="page-item disabled"><span class="page-link rounded-pill">&raquo;</span></li>
+                    @endif
+                </ul>
+            </div>
     </div>
 </div>
-<style>
-    /* Boutons principaux */
-.btn-primary {
-  background: linear-gradient(135deg, #6C63FF, #4A42D6);
-  color: #ffffff;
-  box-shadow: 0 4px 10px rgba(108, 99, 255, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(108, 99, 255, 0.4);
-}
-
-/* Bouton Voir (œil) */
-.btn-view {
-  background: linear-gradient(135deg, #7CE0D6, #5BC0DE);
-  color: #ffffff;
-  box-shadow: 0 4px 10px rgba(92, 225, 230, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.btn-view:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(92, 225, 230, 0.4);
-}
-
-/* Bouton Modifier (crayon) */
-.btn-edit {
-  background: linear-gradient(135deg, #FFD166, #FFB84D);
-  color: #8C5E19;
-  box-shadow: 0 4px 10px rgba(255, 184, 77, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.btn-edit:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(255, 184, 77, 0.4);
-}
-
-/* Carte englobante */
-.card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(46, 42, 71, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Corps de la carte */
-.card-body {
-  padding: 0;
-  flex: 1;
-}
-
-/* Tableaux */
-table {
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-}
-
-thead {
-  background-color: #F9FAFB;
-}
-
-th, td {
-  padding: 0.75rem 1.5rem;
-  text-align: left;
-  vertical-align: middle;
-}
-
-tbody tr:hover {
-  background-color: #F3F4F6;
-  transition: background-color 0.2s ease;
-}
-
-/* Badges de niveau et de type */
-.inline-flex {
-  display: inline-flex;
-}
-
-.text-xs {
-  font-size: 0.75rem;
-}
-
-.leading-5 {
-  line-height: 1.25rem;
-}
-
-.rounded-full {
-  border-radius: 9999px;
-}
-
-.bg-gray-100 {
-  background-color: #F3F4F6;
-}
-
-.text-gray-800 {
-  color: #1F2937;
-}
-
-.bg-blue-100 {
-  background-color: #DBEAFE;
-}
-
-.text-blue-800 {
-  color: #1E40AF;
-}
-
-.bg-green-100 {
-  background-color: #D1FAE5;
-}
-
-.text-green-800 {
-  color: #065F46;
-}
-
-.bg-yellow-100 {
-  background-color: #FEF9C3;
-}
-
-.text-yellow-800 {
-  color: #78350F;
-}
-
-/* Pagination (Bootstrap 5 override) */
-.pagination .page-item .page-link {
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 4px;
-  font-weight: 500;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.pagination .page-item .page-link {
-  color: #374151;
-  background-color: #F3F4F6;
-}
-
-.pagination .page-item .page-link:hover {
-  background-color: #6C63FF;
-  color: #ffffff;
-}
-
-.pagination .page-item.active .page-link {
-  background-color: #6C63FF;
-  color: #ffffff;
-}
-
-    </style>
 @endsection

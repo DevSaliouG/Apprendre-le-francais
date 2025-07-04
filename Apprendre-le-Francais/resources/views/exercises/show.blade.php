@@ -128,6 +128,8 @@
                         document.getElementById('question-container').innerHTML = html;
                         document.getElementById('question-counter').textContent = currentIndex + 1;
                         updateProgress();
+                        // Réattacher les gestionnaires vocaux après le chargement
+                        attachVoiceHandlers();
                     });
             }
 
@@ -167,6 +169,131 @@
                     });
                 }
             }
+
+            // Réattacher les gestionnaires vocaux
+            function attachVoiceHandlers() {
+                // Synthèse vocale
+                document.querySelectorAll('.play-question').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const text = this.getAttribute('data-question-text');
+                        speakText(text);
+                    });
+                });
+
+                // Reconnaissance vocale
+                document.querySelectorAll('.start-recording').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const questionId = this.getAttribute('data-question-id');
+                        startRecording(questionId, this);
+                    });
+                });
+            }
+
+            // Synthèse vocale
+            function speakText(text) {
+                if ("speechSynthesis" in window) {
+                    // Arrêter toute parole en cours
+                    window.speechSynthesis.cancel();
+                    
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    utterance.lang = "fr-FR";
+                    utterance.rate = 1.0;
+                    utterance.pitch = 1.0;
+
+                    // Sélectionne une voix féminine si disponible
+                    const voices = speechSynthesis.getVoices();
+                    const frenchVoice = voices.find(
+                        (voice) =>
+                        voice.lang.includes("fr") && voice.name.includes("female")
+                    );
+
+                    if (frenchVoice) utterance.voice = frenchVoice;
+
+                    window.speechSynthesis.speak(utterance);
+                } else {
+                    alert("Votre navigateur ne supporte pas la lecture vocale.");
+                }
+            }
+
+            // Reconnaissance vocale
+            function startRecording(questionId, button) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                
+                if (!SpeechRecognition) {
+                    alert("Reconnaissance vocale non supportée sur ce navigateur.");
+                    return;
+                }
+
+                const recognition = new SpeechRecognition();
+                recognition.lang = 'fr-FR';
+                recognition.interimResults = false;
+                recognition.maxAlternatives = 1;
+
+                // Mise à jour UI - démarrage
+                const statusElement = document.getElementById(`status-${questionId}`);
+                const feedbackElement = document.getElementById(`recording-feedback-${questionId}`);
+                const pulseElement = feedbackElement?.querySelector('.pulse-animation');
+                
+                if (statusElement) {
+                    statusElement.innerHTML = '<span class="badge badge-danger">Enregistrement</span>';
+                }
+                if (button) {
+                    button.innerHTML = '<i class="fas fa-microphone-slash"></i> Arrêter';
+                    button.classList.remove('btn-outline-purple');
+                    button.classList.add('btn-danger');
+                }
+                if (pulseElement) {
+                    pulseElement.classList.remove('d-none');
+                }
+
+                // Démarrer l'enregistrement
+                recognition.start();
+
+                recognition.onresult = function(event) {
+                    const transcript = event.results[0][0].transcript;
+                    document.getElementById(`transcription-${questionId}`).value = transcript;
+                    
+                    // Afficher la transcription pour les questions texte_libre
+                    const textInput = document.querySelector(`input[name="reponse[${questionId}]"]`);
+                    if (textInput) {
+                        textInput.value = transcript;
+                    }
+                };
+
+                recognition.onerror = function(event) {
+                    console.error('Erreur reconnaissance:', event.error);
+                    if (statusElement) {
+                        statusElement.innerHTML = `<span class="badge badge-warning">Erreur: ${event.error}</span>`;
+                    }
+                };
+
+                recognition.onend = function() {
+                    // Réinitialiser UI
+                    if (statusElement) {
+                        statusElement.innerHTML = '<span class="badge badge-success">Terminé</span>';
+                    }
+                    if (button) {
+                        button.innerHTML = '<i class="fas fa-microphone"></i> Réessayer';
+                        button.classList.remove('btn-danger');
+                        button.classList.add('btn-outline-purple');
+                    }
+                    if (pulseElement) {
+                        pulseElement.classList.add('d-none');
+                    }
+                };
+
+                // Arrêter l'enregistrement si on reclique
+                if (button) {
+                    button.onclick = function() {
+                        recognition.stop();
+                    };
+                }
+            }
+
+            // Initialisation des gestionnaires vocaux
+            attachVoiceHandlers();
+            // Initialiser les voix au chargement de la page
+            window.speechSynthesis.getVoices();
         });
     </script>
 @endsection
