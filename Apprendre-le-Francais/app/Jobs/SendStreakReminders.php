@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
@@ -18,10 +19,10 @@ class SendStreakReminders implements ShouldQueue
     public function handle()
     {
         $yesterday = now()->subDay();
-        
-        $users = User::whereHas('learningStreak', function($query) use ($yesterday) {
+
+        $users = User::whereHas('learningStreak', function ($query) use ($yesterday) {
             $query->where('last_activity_date', $yesterday->format('Y-m-d'))
-                  ->where('break_risk_alerted', false);
+                ->where('break_risk_alerted', false);
         })->get();
 
         foreach ($users as $user) {

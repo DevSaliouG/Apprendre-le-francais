@@ -16,13 +16,12 @@ class BadgeController extends Controller
         $user = Auth::user();
         $badges = Badge::withCount('users')->get();
         $userBadges = $user->badges->pluck('id')->toArray();
-        
-        // Ajouter la progression pour chaque badge
+
         $badges->transform(function ($badge) use ($user) {
             $badge->progress = $this->calculateProgress($user, $badge);
             return $badge;
         });
-        
+
         return view('badges.index', compact('badges', 'userBadges'));
     }
 
@@ -30,24 +29,21 @@ class BadgeController extends Controller
     {
         $user = Auth::user();
         $badges = $user->badges()->paginate(12);
-        
-        // Ajouter la progression pour chaque badge
+
         $badges->getCollection()->transform(function ($badge) use ($user) {
             $badge->progress = $this->calculateProgress($user, $badge);
             return $badge;
         });
-        
-        // Précharger les relations pour les prochains badges
+
         $nextBadges = Badge::whereNotIn('id', $badges->pluck('id'))
             ->withCount('users')
             ->get();
-        
-        // Ajouter la progression pour les prochains badges
+
         $nextBadges->transform(function ($badge) use ($user) {
             $badge->progress = $this->calculateProgress($user, $badge);
             return $badge;
         });
-        
+
         return view('badges.my', compact('badges', 'nextBadges'));
     }
 
@@ -57,46 +53,94 @@ class BadgeController extends Controller
         $user = Auth::user();
         $hasBadge = $user->badges->contains($badge->id);
         $progress = $this->calculateProgress($user, $badge);
-        
-        return view('badges.show', compact('badge', 'hasBadge', 'progress'));
+
+        // Top 5 utilisateurs ayant ce badge
+        $topUsers = $badge->users()
+            ->orderBy('experience_points', 'desc')
+            ->take(5)
+            ->get();
+
+        return view('badges.show', compact('badge', 'hasBadge', 'progress', 'topUsers'));
     }
 
-    // Calculer la progression vers un badge
+    // Calculer la progression vers un badge (version améliorée)
     public function calculateProgress(User $user, Badge $badge)
     {
         switch ($badge->type) {
             case 'lesson':
                 $completed = $user->completedLessons->count();
-                return [
-                    'current' => $completed,
-                    'target' => $badge->threshold,
-                    'percentage' => min(100, round(($completed / $badge->threshold) * 100))
-                ];
-                
+                break;
+            
             case 'streak':
-                $currentStreak = $user->learningStreak->current_streak ?? 0;
-                return [
-                    'current' => $currentStreak,
-                    'target' => $badge->threshold,
-                    'percentage' => min(100, round(($currentStreak / $badge->threshold) * 100))
-                ];
-                
+                $completed = $user->learningStreak ? $user->learningStreak->current_streak : 0;
+                break;
+            
             case 'exercise':
                 $completed = UserActivity::where('user_id', $user->id)
                     ->where('activity_type', 'exercise_completed')
+                    ->where('score', '>=', 85)
                     ->count();
-                return [
-                    'current' => $completed,
-                    'target' => $badge->threshold,
-                    'percentage' => min(100, round(($completed / $badge->threshold) * 100))
-                ];
-                
+                break;
+            
+            case 'level':
+                $completed = $user->level ? $user->level->id : 0;
+                break;
+            
+            case 'social':
+                $completed = UserActivity::where('user_id', $user->id)
+                    ->whereIn('activity_type', ['achievement_shared', 'friend_helped'])
+                    ->count();
+                break;
+            
+            case 'special':
+                // Logique spéciale selon le badge
+                switch ($badge->name) {
+                    case 'Polyglotte':
+                        $completed = $user->languages_learned_count ?? 0;
+                        break;
+                    case 'Noctambule':
+                        $completed = UserActivity::where('user_id', $user->id)
+                            ->whereTime('created_at', '>=', '22:00:00')
+                            ->count();
+                        break;
+                    default:
+                        $completed = $user->badges->count();
+                }
+                break;
+            
             default:
-                return [
-                    'current' => 0,
-                    'target' => 1,
-                    'percentage' => 0
-                ];
+                $completed = 0;
         }
+
+        return [
+            'current' => $completed,
+            'target' => $badge->threshold,
+            'percentage' => $badge->threshold > 0
+                ? min(100, round(($completed / $badge->threshold) * 100))
+                : 0
+        ];
+    }
+
+    // API pour attribuer un badge (pour tests)
+    public function awardBadge(Request $request, Badge $badge)
+    {
+        $user = Auth::user();
+        
+        if (!$user->badges->contains($badge->id)) {
+            $user->badges()->attach($badge->id, [
+                'earned_at' => now(),
+                'context' => json_encode(['source' => 'manual-award'])
+            ]);
+            
+            return response()->json([
+                'success' => true,
+                'message' => "Badge {$badge->name} attribué!"
+            ]);
+        }
+        
+        return response()->json([
+            'success' => false,
+            'message' => "Vous avez déjà ce badge!"
+        ], 400);
     }
 }

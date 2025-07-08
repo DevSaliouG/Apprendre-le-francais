@@ -115,8 +115,26 @@
             </div>
         </div>
 
+        <!-- Barre de recherche -->
+        <div class="card shadow-sm border-0 rounded-3 mb-4">
+            <div class="card-body py-3">
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0">
+                        <i class="fas fa-search text-muted"></i>
+                    </span>
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        class="form-control border-start-0" 
+                        placeholder="Rechercher un exercice..."
+                        aria-label="Rechercher un exercice"
+                    >
+                </div>
+            </div>
+        </div>
+
         <!-- Grille exercices -->
-        <div class="row g-4">
+        <div class="row g-4" id="exercisesContainer">
             @foreach ($exercises as $exercise)
                 @php
                     $status = $completionStatus[$exercise->id] ?? [
@@ -129,7 +147,7 @@
                     $exerciseProgress = $questions_count > 0 ? ($correct_count / $questions_count) * 100 : 0;
                 @endphp
 
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4 exercise-card">
                     <div class="card shadow-sm border-0 h-100">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -211,9 +229,32 @@
         </div>
 
         <!-- Pagination -->
-        <div class="d-flex justify-content-center mt-4">
-            {{ $exercises->links() }}
-        </div>
+        <div class="d-flex justify-content-center mt-5">
+                <ul class="pagination shadow-sm rounded-pill">
+                    {{-- Lien précédent --}}
+                    @if ($exercises ->onFirstPage())
+                        <li class="page-item disabled"><span class="page-link rounded-pill">&laquo;</span></li>
+                    @else
+                        <li class="page-item"><a class="page-link rounded-pill"
+                                href="{{ $exercises->previousPageUrl() }}">&laquo;</a></li>
+                    @endif
+
+                    {{-- Pages --}}
+                    @foreach ($exercises->getUrlRange(1, $exercises->lastPage()) as $page => $url)
+                        <li class="page-item {{ $exercises->currentPage() === $page ? 'active' : '' }}">
+                            <a class="page-link rounded-pill" href="{{ $url }}">{{ $page }}</a>
+                        </li>
+                    @endforeach
+
+                    {{-- Lien suivant --}}
+                    @if ($exercises->hasMorePages())
+                        <li class="page-item"><a class="page-link rounded-pill"
+                                href="{{ $exercises->nextPageUrl() }}">&raquo;</a></li>
+                    @else
+                        <li class="page-item disabled"><span class="page-link rounded-pill">&raquo;</span></li>
+                    @endif
+                </ul>
+            </div>
     </div>
 
     <style>
@@ -240,4 +281,27 @@
             }
         }
     </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const exerciseCards = document.querySelectorAll('.exercise-card');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.trim().toLowerCase();
+                
+                exerciseCards.forEach(card => {
+                    const title = card.querySelector('h5').textContent.toLowerCase();
+                    const content = card.querySelector('p').textContent.toLowerCase();
+                    const level = card.querySelector('.fw-medium.text-purple').textContent.toLowerCase();
+                    
+                    const isVisible = title.includes(searchTerm) || 
+                                     content.includes(searchTerm) || 
+                                     level.includes(searchTerm);
+                    
+                    card.style.display = isVisible ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
 @endsection

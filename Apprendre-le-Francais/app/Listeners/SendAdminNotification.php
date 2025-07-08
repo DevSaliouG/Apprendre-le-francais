@@ -11,7 +11,7 @@ class SendAdminNotification implements ShouldQueue
     public function handle($event)
     {
         $admin = User::where('is_admin', true)->first();
-        
+
         if ($admin) {
             $admin->notify(new AdminNotification($event));
         }

@@ -15,11 +15,43 @@ class Badge extends Model
         'color',
         'description',
         'type',
-        'threshold'
+        'threshold',
+        'rarity' // Nouveau: commun, rare, épique, légendaire
+    ];
+
+    protected $casts = [
+        'threshold' => 'integer'
     ];
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_badges');
+        return $this->belongsToMany(User::class, 'user_badges')
+            ->withPivot('earned_at', 'context')
+            ->withTimestamps();
+    }
+
+    // Accessor pour l'icône
+    public function getIconAttribute($value)
+    {
+        return $value ?? 'fa-medal';
+    }
+
+    // Accessor pour la rareté
+    public function getRarityAttribute()
+    {
+        $rarityMap = [
+            1 => 'commun',
+            5 => 'rare',
+            10 => 'épique',
+            20 => 'légendaire'
+        ];
+
+        foreach ($rarityMap as $threshold => $rarity) {
+            if ($this->threshold <= $threshold) {
+                return $rarity;
+            }
+        }
+
+        return 'mythique';
     }
 }

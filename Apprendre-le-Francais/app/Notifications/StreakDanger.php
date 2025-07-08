@@ -9,12 +9,14 @@ class StreakDanger extends Notification
 {
     use Queueable;
 
-    public function toDatabase($notifiable)
+    public function toArray($notifiable)
     {
         return [
             'title' => 'Votre streak est en danger !',
-            'message' => 'Vous avez manqué une journée hier. Revenez aujourd\'hui pour sauver votre serie !',
-            'icon' => 'fa-exclamation-triangle'
+            'message' => 'Vous avez manqué une journée hier. Revenez aujourd\'hui pour sauver votre série !',
+            'icon' => 'fa-exclamation-triangle',
+            'url' => route('streak.index'),
+            'type' => 'streak_danger'
         ];
     }
 

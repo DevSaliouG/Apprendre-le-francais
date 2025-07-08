@@ -124,7 +124,7 @@ class ExerciseController extends Controller
             'exercise',
             'questions',
             'existingResults'
-        ));
+        ))->with('auto_play', $request->has('retry_all') || $request->session()->get('allow_auto_play'));
     }
 
 
@@ -140,19 +140,30 @@ class ExerciseController extends Controller
             $isCorrect = $request->reponse === $question->reponse_correcte;
         } elseif ($question->format_reponse === 'texte_libre') {
             $isCorrect = $this->checkTextAnswer($request->reponse, $question->reponse_correcte);
-        } elseif ($question->format_reponse === 'audio') {
-            $isCorrect = $this->checkTextAnswer($userAnswer, $question->reponse_correcte);
-        }
+        } elseif ($question->format_reponse === 'audio' && !empty($userAnswer)) {
 
+            $audioData = base64_decode(preg_replace('#^data:audio/\w+;base64,#i', '', $userAnswer));
+        
+        // Sauvegarder le fichier
+        $fileName = 'user_audio/' . $user->id . '/' . uniqid() . '.webm';
+        Storage::disk('public')->put($fileName, $audioData);
+        
+        // Utiliser le chemin pour l'analyse
+        $audioPath = Storage::path('public/' . $fileName);
+           $isCorrect = $this->checkTextAnswer($audioPath, $question->reponse_correcte);
+        }
+         $questionScore = $isCorrect ? 100 : 0;
         // Enregistrement du résultat
         UserResult::updateOrCreate(
             ['user_id' => $user->id, 'question_id' => $question->id],
             [
                 'reponse' => $request->reponse ?? '',
                 'correct' => $isCorrect,
-                'test_type' => $exercise->type === 'oral' ? 'speaking' : 'writing'
+                'test_type' => $exercise->type === 'oral' ? 'speaking' : 'writing',
+                'score' => $questionScore
             ]
         );
+        
 
         // Vérifier si l'utilisateur a complété tous les exercices du niveau
         $levelUp = false;
@@ -162,6 +173,10 @@ class ExerciseController extends Controller
             $levelUp = true;
             $newLevel = $user->level;
         }
+
+        // Autoriser la lecture automatique pour la prochaine question
+    $request->session()->put('allow_auto_play', true);
+
 
         return response()->json([
             'correct' => $isCorrect,
@@ -399,11 +414,5 @@ class ExerciseController extends Controller
             'isSuccess',
             'isExerciseCompleted'
         ));
-    }
-    //méthode pour lire le texte
-    public function speakQuestion(Request $request)
-    {
-        $text = $request->input('text');
-        return response()->json(['status' => 'success']);
     }
 }

@@ -1,127 +1,141 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="min-vh-100 d-flex align-items-center" style="background: linear-gradient(135deg, rgba(108, 99, 255, 0.05), rgba(255, 101, 132, 0.05));">
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-md-10 col-lg-8">
-                <div class="card shadow-lg border-0 rounded-3 overflow-hidden">
-                    <!-- Section d'en-tête avec animation -->
-                    <div class="card-header py-4 position-relative" style="background: linear-gradient(135deg, var(--primary), var(--primary-light));">
-                        <div class="d-flex align-items-center justify-content-center">
-                            <i class="fas fa-sign-in-alt fa-3x text-white me-3"></i>
-                            <h1 class="h2 mb-0 text-white">{{ __("Connexion") }}</h1>
+<div class="min-vh-100 d-flex align-items-center" style="background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);">
+    <div class="container">
+        <div class="row justify-content-center align-items-center shadow-lg bg-white rounded-4 overflow-hidden">
+            <!-- Colonne gauche (Image ou texte de bienvenue) -->
+            <div class="col-md-6 d-none d-md-flex text-white flex-column justify-content-center p-5" style="background: linear-gradient(135deg, #6c63ff 0%, #8a84ff 100%);">
+                <div class="text-center">
+                    <h1 class="display-5 fw-bold mb-4">FrançaisFacile</h1>
+                    <h2 class="h3 mb-4">Maîtrisez le français en vous amusant</h2>
+                    
+                    <div class="bg-white-20 p-4 rounded-3 mb-4">
+                        <h3 class="h4 mb-3">Rejoignez plus de 20 000 apprenants !</h3>
+                        <p>Découvrez les témoignages de nos apprenants satisfaits</p>
+                    </div>
+                    
+                    <div class="text-start">
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="fas fa-book-open fs-3 me-3 mt-1"></i>
+                            <div>
+                                <h4 class="h5 mb-2">Compréhension Écrite</h4>
+                                <p class="mb-0">Des exercices interactifs et des textes adaptés à votre niveau</p>
+                            </div>
                         </div>
                         
-                        <!-- Effet de fond animé -->
-                        <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden" style="z-index: 0;">
-                            <div class="bubble" style="--size: 3rem; --distance: 6rem; --position: 20%; --time: 14s;"></div>
-                            <div class="bubble" style="--size: 2rem; --distance: 8rem; --position: 60%; --time: 16s;"></div>
-                            <div class="bubble" style="--size: 4rem; --distance: 5rem; --position: 85%; --time: 12s;"></div>
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="fas fa-headphones fs-3 me-3 mt-1"></i>
+                            <div>
+                                <h4 class="h5 mb-2">Compréhension Orale</h4>
+                                <p class="mb-0">Écoutez des dialogues authentiques et testez votre compréhension</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start">
+                            <i class="fas fa-chart-line fs-3 me-3 mt-1"></i>
+                            <div>
+                                <h4 class="h5 mb-2">Suivi Personnalisé</h4>
+                                <p class="mb-0">Des recommandations basées sur vos progrès</p>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="card-body p-4 p-md-5">
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
-
-                            <!-- Email -->
-                            <div class="mb-4">
-                                <div class="input-group">
-                                    <span class="input-group-text bg-light border-end-0">
-                                        <i class="fas fa-envelope text-primary"></i>
-                                    </span>
-                                    <div class="form-floating flex-grow-1">
-                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                               name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
-                                               placeholder="{{ __('Adresse Email') }}">
-                                        <label for="email" class="form-label">
-                                            {{ __('Adresse Email') }}
-                                        </label>
-                                    </div>
-                                </div>
-                                @error('email')
-                                    <div class="invalid-feedback d-block mt-2">
-                                        <i class="fas fa-exclamation-circle me-2"></i> {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
-                            <!-- Mot de passe -->
-                            <div class="mb-4">
-                                <div class="input-group">
-                                    <span class="input-group-text bg-light border-end-0">
-                                        <i class="fas fa-lock text-primary"></i>
-                                    </span>
-                                    <div class="form-floating flex-grow-1 position-relative">
-                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
-                                               name="password" required autocomplete="current-password"
-                                               placeholder="{{ __('Mot de passe') }}">
-                                        <label for="password" class="form-label">
-                                            {{ __('Mot de passe') }}
-                                        </label>
-                                        <span class="password-toggle position-absolute end-0 top-50 translate-middle-y me-3">
-                                            <i class="fas fa-eye toggle-password" data-target="password"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                @error('password')
-                                    <div class="invalid-feedback d-block mt-2">
-                                        <i class="fas fa-exclamation-circle me-2"></i> {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
-                            <!-- Se souvenir de moi -->
-                            <div class="mb-4 form-check">
-                                <input type="checkbox" class="form-check-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                <label class="form-check-label" for="remember">{{ __('Se souvenir de moi') }}</label>
-                            </div>
-
-                            <!-- Bouton de soumission -->
-                            <div class="d-grid mb-4">
-                                <button type="submit" class="btn btn-primary btn-lg rounded-pill py-3 fw-bold shadow position-relative overflow-hidden">
-                                    <span class="position-relative z-index-1">{{ __("Connexion") }}</span>
-                                    <span class="btn-overlay position-absolute top-0 start-0 w-100 h-100 bg-white opacity-20"></span>
-                                </button>
-                            </div>
-
-                            <!-- Liens supplémentaires -->
-                            <div class="d-flex justify-content-between mt-3">
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link text-decoration-none" href="{{ route('password.request') }}">
-                                        <i class="fas fa-key me-1"></i> {{ __('Mot de passe oublié?') }}
-                                    </a>
-                                @endif
-                                <a class="btn btn-link text-decoration-none" href="{{ route('register') }}">
-                                    <i class="fas fa-user-plus me-1"></i> {{ __("S'inscrire") }}
-                                </a>
-                            </div>
-
-                            <!-- Séparateur -->
-                            <div class="position-relative my-4">
-                                <hr>
-                                <span class="position-absolute top-50 start-50 translate-middle bg-white px-3 text-muted">Ou</span>
-                            </div>
-
-                            <!-- Connexion sociale -->
-                            <div class="text-center">
-                                <p class="mb-3">{{ __("Se connecter avec") }}</p>
-                                <div class="d-flex justify-content-center gap-3">
-                                    <a href="#" class="btn btn-outline-primary rounded-circle p-3 social-btn">
-                                        <i class="fab fa-google"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-outline-primary rounded-circle p-3 social-btn">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-outline-primary rounded-circle p-3 social-btn">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </form>
+                    
+                    <div class="mt-5 pt-3">
+                        <p class="fst-italic">"FrançaisFacile a transformé mon apprentissage du français. Les exercices sont ludiques et vraiment efficaces !"</p>
+                        <p class="fw-medium">- Serigne Saliou, étudiant</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Colonne droite (Formulaire) -->
+            <div class="col-md-6 p-5">
+                <div class="text-center mb-4">
+                    <div class="d-flex justify-content-center mb-3">
+                        <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                            <i class="fas fa-book fs-2 text-white"></i>
+                        </div>
+                    </div>
+                    <h2 class="fw-bold">{{ __('Connexion à FrancaisFacile') }}</h2>
+                    <p class="text-muted mt-2">Améliorez votre compréhension du français dès aujourd'hui</p>
+                </div>
+
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+
+                    <!-- Email -->
+                    <div class="form-floating mb-3">
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                               name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                               placeholder="Adresse Email">
+                        <label for="email">{{ __('Adresse Email') }}</label>
+                        @error('email')
+                            <div class="invalid-feedback d-block mt-1">
+                                <i class="fas fa-exclamation-circle me-1"></i> {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <!-- Mot de passe -->
+                    <div class="form-floating mb-3 position-relative">
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
+                               name="password" required autocomplete="current-password"
+                               placeholder="Mot de passe">
+                        <label for="password">{{ __('Mot de passe') }}</label>
+                        <i class="fas fa-eye position-absolute end-0 top-50 translate-middle-y me-3 toggle-password" data-target="password" style="cursor:pointer;"></i>
+                        @error('password')
+                            <div class="invalid-feedback d-block mt-1">
+                                <i class="fas fa-exclamation-circle me-1"></i> {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <!-- Se souvenir de moi -->
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                        <label class="form-check-label" for="remember">
+                            {{ __('Se souvenir de moi') }}
+                        </label>
+                    </div>
+
+                    <!-- Bouton -->
+                    <div class="d-grid mb-3">
+                        <button type="submit" class="btn btn-primary btn-lg py-3 fw-bold">
+                            <i class="fas fa-sign-in-alt me-2"></i> {{ __('Commencer à apprendre') }}
+                        </button>
+                    </div>
+
+                    <!-- Liens supplémentaires -->
+                    <div class="d-flex justify-content-between mb-3">
+                        @if (Route::has('password.request'))
+                            <a class="text-decoration-none" href="{{ route('password.request') }}">
+                                <i class="fas fa-key me-1"></i> {{ __('Mot de passe oublié?') }}
+                            </a>
+                        @endif
+                        <a class="text-decoration-none" href="{{ route('register') }}">
+                            <i class="fas fa-user-plus me-1"></i> {{ __("Créer un compte") }}
+                        </a>
+                    </div>
+
+                    <!-- Réseaux sociaux -->
+                    <div class="text-center mt-4">
+                        <div class="position-relative mb-4">
+                            <hr>
+                            <span class="position-absolute top-50 start-50 translate-middle bg-white px-3 text-muted">ou continuer avec</span>
+                        </div>
+                        <div class="d-flex justify-content-center gap-3">
+                            <a href="#" class="btn btn-outline-secondary rounded-circle p-2">
+                                <i class="fab fa-google"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary rounded-circle p-2">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary rounded-circle p-2">
+                                <i class="fab fa-apple"></i>
+                            </a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -130,100 +144,42 @@
 
 @push('styles')
 <style>
-    .card-header {
-        background: linear-gradient(135deg, var(--primary), var(--primary-light));
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
+    .bg-white-20 {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
     }
     
-    .bubble {
-        position: absolute;
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 50%;
-        width: var(--size);
-        height: var(--size);
-        bottom: 0;
-        left: var(--position);
-        animation: bubble var(--time) linear infinite;
+    .form-control:focus {
+        border-color: #8a84ff;
+        box-shadow: 0 0 0 0.25rem #8a84ff;
     }
     
-    @keyframes bubble {
-        0% {
-            transform: translateY(0);
-            opacity: 0;
-        }
-        10% {
-            opacity: 1;
-        }
-        90% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(calc(-1 * var(--distance)));
-            opacity: 0;
-        }
-    }
-    
-    .input-group {
-        margin-bottom: 1.5rem;
-    }
-    
-    .input-group-text {
+    .btn-primary {
+        background: linear-gradient(135deg, #8a84ff 0%, #8a84ff 100%);
+        border: none;
         transition: all 0.3s ease;
     }
     
-    .form-control:focus + .input-group-text {
-        background-color: #e0e7ff;
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px #8a84ff;
     }
     
-    .password-toggle {
-        cursor: pointer;
-        z-index: 5;
-        color: #6c757d;
-        transition: color 0.3s ease;
-    }
-    
-    .password-toggle:hover {
-        color: var(--primary);
-    }
-    
-    .btn-overlay {
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-    
-    .btn:hover .btn-overlay {
-        opacity: 0.2;
-    }
-    
-    .social-btn {
-        width: 56px;
-        height: 56px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-    }
-    
-    .social-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        background: rgba(255, 255, 255, 0.1);
+    .toggle-password:hover {
+        color: #8a84ff;
     }
 </style>
 @endpush
 
 @push('scripts')
 <script>
+    // Toggle password visibility
     document.addEventListener('DOMContentLoaded', function() {
-        // Toggle password visibility
         document.querySelectorAll('.toggle-password').forEach(icon => {
-            icon.addEventListener('click', function() {
-                const target = this.getAttribute('data-target');
-                const input = document.getElementById(target);
-                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
-                input.setAttribute('type', type);
+            icon.addEventListener('click', function () {
+                const target = document.getElementById(this.dataset.target);
+                const type = target.type === 'password' ? 'text' : 'password';
+                target.type = type;
                 this.classList.toggle('fa-eye');
                 this.classList.toggle('fa-eye-slash');
             });

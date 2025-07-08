@@ -74,6 +74,11 @@ class User extends Authenticatable
         return $this->hasMany(UserResult::class);
     }
 
+     public function activities()
+    {
+        return $this->hasMany(UserActivity::class);
+    }
+
     public function hasCompletedLesson($lessonId)
     {
         return $this->completedLessons()->where('lesson_id', $lessonId)->exists();
@@ -226,13 +231,25 @@ class User extends Authenticatable
             'percentage' => $percentage
         ];
     }
-   public function getLearningStreakAttribute()
-{
-    return $this->learningStreak()->firstOrCreate([], [
-        'current_streak' => 0,
-        'longest_streak' => 0,
-        'last_activity_date' => null
-    ]);
-}
-    
+    public function getLearningStreakAttribute()
+    {
+        return $this->learningStreak()->firstOrCreate([], [
+            'current_streak' => 0,
+            'longest_streak' => 0,
+            'last_activity_date' => null
+        ]);
+    }
+    public function hasBadgeForMilestone($milestoneId)
+    {
+        return $this->badges()->whereHas('milestone', function ($q) use ($milestoneId) {
+            $q->where('id', $milestoneId);
+        })->exists();
+    }
+
+    public function hadActivityToday()
+    {
+        return UserActivity::where('user_id', $this->id)
+            ->whereDate('created_at', today())
+            ->exists();
+    }
 }

@@ -10,9 +10,10 @@
     </div>
 
     <div class="card-body bg-light">
-        <form id="exercise-form">
-            <div class="mb-4">
-                @foreach ($questions as $index => $question)
+        <div class="mb-4">
+            @foreach ($questions as $index => $question)
+                <form class="question-form" data-question-id="{{ $question->id }}">
+                    @csrf
                     <div class="card mb-4 border-0 shadow-sm">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -26,11 +27,11 @@
                             <p class="mb-4">{{ $question->texte }}</p>
 
                             @if ($question->format_reponse === 'choix_multiple')
-                                <div class="vstack gap-3">
+                                <div class="vstack gap-3 mb-3">
                                     @foreach ($question->choix as $key => $choice)
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio"
-                                                   name="answer[{{ $question->id }}]"
+                                                   name="answer"
                                                    id="choice-{{ $question->id }}-{{ $key }}"
                                                    value="{{ $choice }}">
                                             <label class="form-check-label"
@@ -43,7 +44,7 @@
                             @elseif ($question->format_reponse === 'texte_libre')
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control form-control-lg rounded-pill"
-                                           name="answer[{{ $question->id }}]" 
+                                           name="answer" 
                                            id="reponse-{{ $question->id }}"
                                            placeholder="Tapez votre réponse ici...">
                                     <!-- Bouton Reconnaissance Vocale -->
@@ -54,42 +55,38 @@
                                     </button>
                                 </div>
                             @elseif ($question->format_reponse === 'audio')
-                                <div class="d-flex align-items-center">
-                                    <!-- Bouton Reconnaissance Vocale -->
+                                <div class="d-flex align-items-center mb-3">
                                     <button type="button" 
                                             class="btn btn-purple start-recording me-3"
                                             data-question-id="{{ $question->id }}">
                                         <i class="fas fa-microphone me-2"></i> Enregistrer réponse
                                     </button>
-                                    
                                     <div class="recording-status" id="status-{{ $question->id }}">
                                         <span class="badge badge-light">Prêt</span>
                                     </div>
                                 </div>
-                                
-                                <!-- Feedback visuel -->
+
                                 <div class="mt-3" id="recording-feedback-{{ $question->id }}">
                                     <div class="pulse-animation d-none">
                                         <span class="recording-dot"></span> En cours d'enregistrement...
                                     </div>
                                 </div>
-                                
-                                <!-- Champ caché pour stocker la transcription -->
+
                                 <input type="hidden" 
-                                       name="answer[{{ $question->id }}]" 
+                                       name="answer" 
                                        id="transcription-{{ $question->id }}">
                             @endif
+
+                            <div class="text-end mt-4">
+                                <button type="submit" class="btn btn-purple rounded-pill px-4">
+                                    <i class="fas fa-check-circle me-2"></i>Valider la réponse
+                                </button>
+                            </div>
                         </div>
                     </div>
-                @endforeach
-            </div>
-
-            <div class="text-center">
-                <button type="submit" class="btn btn-purple btn-lg rounded-pill px-5">
-                    <i class="fas fa-paper-plane me-2"></i>Soumettre mes réponses
-                </button>
-            </div>
-        </form>
+                </form>
+            @endforeach
+        </div>
     </div>
 </div>
 
@@ -103,13 +100,13 @@
         margin-right: 8px;
         animation: pulse 1.5s infinite;
     }
-    
+
     @keyframes pulse {
         0% { opacity: 1; }
         50% { opacity: 0.5; }
         100% { opacity: 1; }
     }
-    
+
     .pulse-animation {
         color: #dc3545;
         font-weight: bold;

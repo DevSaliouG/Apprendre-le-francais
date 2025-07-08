@@ -38,7 +38,7 @@ class AdminNotification extends Notification
                     'type' => 'badge'
                 ];
                 break;
-                
+
             case 'App\Events\NewUserRegistered':
                 $data = [
                     'message' => "Nouvel utilisateur inscrit: {$this->event->user->name}",
@@ -47,7 +47,7 @@ class AdminNotification extends Notification
                     'type' => 'user'
                 ];
                 break;
-                
+
             case 'App\Events\LevelUp':
                 $data = [
                     'message' => "{$this->event->user->name} a atteint le niveau {$this->event->level->name}",
@@ -56,11 +56,12 @@ class AdminNotification extends Notification
                     'type' => 'level'
                 ];
                 break;
-                
+
             case 'App\Events\ExerciseCompleted':
+                // Notifier seulement si l'exercice est réussi
                 if ($this->event->score >= 85) {
                     $data = [
-                        'message' => "{$this->event->user->name} a réussi l'exercice {$this->event->exercise->id} avec {$this->event->score}%",
+                        'message' => "{$this->event->user->name} a réussi l'exercice {$this->event->exercise->title} avec {$this->event->score}%",
                         'icon' => 'fas fa-check-circle',
                         'url' => route('admin.exercises.show', $this->event->exercise->id),
                         'type' => 'exercise'

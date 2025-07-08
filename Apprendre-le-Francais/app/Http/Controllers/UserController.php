@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Badge;
 use App\Models\Exercise;
 use App\Models\User;
 use App\Models\Level;
@@ -263,15 +264,16 @@ private function calculateSuccessRate(User $user)
 
 private function getBadgesData($user)
 {
-    $badgeTypes = ['lesson', 'exercise', 'streak', 'challenge', 'participation'];
+    // Récupérer les types distincts de badges
+    $badgeTypes = Badge::distinct()->pluck('type')->toArray();
     
     $data = [];
+    $labels = [];
     foreach ($badgeTypes as $type) {
         $count = $user->badges()->where('type', $type)->count();
         $data[] = $count;
+        $labels[] = ucfirst($type);
     }
-    
-    $labels = array_map('ucfirst', $badgeTypes);
     
     return ['labels' => $labels, 'data' => $data];
 }

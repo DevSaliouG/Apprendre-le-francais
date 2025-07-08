@@ -29,7 +29,7 @@
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->prenom }} {{ $user->nom }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->level->code ?? '-' }}</td>
+                        <td>{{ $user->level->name ?? '-' }}</td>
                         <td>
                             @if($user->is_admin)
                                 <span class="badge bg-success">Oui</span>

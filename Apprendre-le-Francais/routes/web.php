@@ -56,44 +56,44 @@ require __DIR__.'/auth.php';
 |
 */
 
- Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
+Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
 
 // Authentification
 Route::middleware('guest')->group(function () {
     Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
-    
+
     Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
     Route::post('register', [RegisteredUserController::class, 'store']);
-    
+
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
-                ->name('password.request');
+        ->name('password.request');
 });
 
 // Routes protégées par authentification
 Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
-    
+
     // Dashboard utilisateur
     Route::get('/dashboard', [ControllersUserController::class, 'dashboard'])->name('dashboard');
-    
+
     // Profil utilisateur
     Route::prefix('profile')->group(function () {
         Route::get('/edit', [ProfilUserController::class, 'edit'])->name('profil.edit');
         Route::put('/update', [ProfilUserController::class, 'update'])->name('profil.update');
         Route::get('/show', [ProfilUserController::class, 'show'])->name('profile.show');
     });
-    
+
     // Progression
     Route::get('/progression', [UserProgressController::class, 'progression'])->name('progress');
-    
+
     // Badges
     Route::prefix('badges')->group(function () {
         Route::get('/', [BadgeController::class, 'index'])->name('badges.index');
         Route::get('/my', [BadgeController::class, 'myBadges'])->name('badges.my');
         Route::get('/{badge}', [BadgeController::class, 'show'])->name('badges.show');
     });
-    
+
     // Streak
     Route::prefix('streak')->group(function () {
         Route::get('/', [StreakController::class, 'index'])->name('streak.index');
@@ -109,15 +109,15 @@ Route::middleware('auth')->group(function () {
         Route::get('/{exercise}/result', [ExerciseController::class, 'showResult'])
             ->name('exercises.result');
     });
-    
+
     // Questions
     Route::get('/questions/{question}/html', [QuestionController::class, 'html'])
         ->name('questions.html');
-    
+
     // Niveaux
     Route::post('/level/upgrade', [LevelController::class, 'upgrade'])
         ->name('level.upgrade');
-    
+
     // Leçons
     Route::prefix('lessons')->group(function () {
         Route::get('/', [LessonController::class, 'index'])->name('lessons.index');
@@ -125,7 +125,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/{lesson}/complete', [LessonController::class, 'complete'])
             ->name('lessons.complete');
     });
-    
+
     // Notifications
     Route::prefix('notifications')->group(function () {
         Route::get('/', [NotificationController::class, 'index'])->name('notifications.index');
@@ -135,7 +135,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/mark-all-read2', [NotificationController::class, 'markAllRead'])->name('notifications.markAllRead');
         Route::post('/{notification}/mark-read', [NotificationController::class, 'markRead'])->name('notifications.markRead');
     });
-    
+
     Route::post('/notifications/mark-as-read', function () {
         auth()->user()->unreadNotifications->markAsRead();
         return response()->json(['success' => true]);
@@ -154,19 +154,19 @@ Route::prefix('test')->group(function () {
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', [AdminAdminController::class, 'dashboard'])->name('dashboard');
     Route::redirect('/', '/admin/dashboard', 301);
-    
+
     // Ressources admin
     Route::resource('levels', LevelAdminController::class);
     Route::resource('users', UserController::class);
     Route::resource('lessons', LessonAdminController::class);
     Route::resource('questions', QuestionAdminController::class);
     Route::resource('exercises', ExerciseAdminController::class)->except(['destroy']);
-    
+
     // Questions des exercices
     Route::resource('exercises.questions', QuestionAdminController::class)
         ->shallow()
         ->except(['destroy']);
 });
 
- Route::delete('exercises/{exercise}', [ExerciseAdminController::class, 'destroy'])
+Route::delete('exercises/{exercise}', [ExerciseAdminController::class, 'destroy'])
     ->name('admin.exercises.destroy');

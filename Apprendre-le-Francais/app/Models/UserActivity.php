@@ -9,7 +9,13 @@ class UserActivity extends Model
 {
     use HasFactory;
 
-      protected $fillable = ['user_id', 'activity_type'];
+      protected $fillable = [
+        'user_id',
+       'activity_type',
+       'points_earned',
+        'score'
+
+      ];
     
     public function user()
     {

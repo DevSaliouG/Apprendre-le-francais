@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\BadgeEarned;
 use App\Mail\StreakReminderEmail;
 use App\Models\Badge;
 use App\Models\User;
@@ -86,72 +87,48 @@ class StreakController extends Controller
         $milestones = StreakMilestone::all();
 
         foreach ($milestones as $milestone) {
-            if ($currentStreak >= $milestone->days_required) {
-                // Vérifier si le badge a déjà été attribué
+            if ($currentStreak >= $milestone->days_required && !$user->hasBadgeForMilestone($milestone->id)) {
                 $badge = Badge::firstOrCreate(
                     ['name' => $milestone->badge_name],
-                    ['icon' => $milestone->badge_icon]
+                    [
+                        'icon' => $milestone->badge_icon,
+                        'threshold' => $milestone->days_required,
+                        'type' => 'streak'
+                    ]
                 );
 
-                // Attribuer le badge à l'utilisateur
                 if (!$user->badges()->where('badge_id', $badge->id)->exists()) {
                     $user->badges()->attach($badge->id, [
                         'earned_at' => now(),
                         'message' => $milestone->notification_message
                     ]);
 
-                    // Créer une notification
-                    Notification::create([
-                        'user_id' => $user->id,
-                        'title' => 'Nouveau badge obtenu !',
-                        'message' => $milestone->notification_message,
-                        'icon' => $milestone->badge_icon,
-                        'read_at' => null
-                    ]);
+                    // Utilisation du système de notifications Laravel
+                    $user->notify(new \App\Notifications\BadgeUnlocked($badge));
+                    event(new BadgeEarned($user, $badge));
                 }
             }
         }
     }
-
     /**
      * Vérifie si une relance est nécessaire
      */
     private function checkReminderNeeded(User $user)
     {
         $streak = $user->learningStreak;
-
         if (!$streak || !$streak->last_activity_date) return;
 
         $lastActive = Carbon::parse($streak->last_activity_date);
         $today = now();
 
-        // Vérifier si hier a été manqué
         if ($lastActive->isYesterday() && !$streak->break_risk_alerted) {
-            // Marquer comme alerté
-            $streak->update([
-                'break_risk_alerted' => true,
-                'last_reminder_sent_at' => now()
-            ]);
+            $streak->update(['break_risk_alerted' => true]);
 
-            // Envoyer une notification
-           
-
-$user->notifications()->create([
-    'id' => Str::uuid(),
-    'type' => 'streak_danger', // Choisissez un identifiant logique
-    'data' => [
-        'title' => 'Votre streak est en danger !',
-        'message' => 'Vous avez manqué une journée hier. Revenez aujourd\'hui pour sauver votre streak !',
-        'icon' => 'fa-exclamation-triangle'
-    ]
-]);
-/* 
-            // Envoyer un email
-            Mail::to($user->email)->send(new StreakReminderEmail($user)); */
+            // Utilisation de la notification StreakDanger
+            $user->notify(new \App\Notifications\StreakDanger());
         }
 
-        // Réinitialiser l'alerte si l'utilisateur est actif aujourd'hui
-        if ($today->isToday() && $streak->break_risk_alerted) {
+        if ($today->isToday() && $streak->break_risk_alerted && $user->hadActivityToday()) {
             $streak->update(['break_risk_alerted' => false]);
         }
     }
